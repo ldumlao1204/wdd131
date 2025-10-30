@@ -12,7 +12,7 @@ body {
 }
 
 header {
-    background-color: #f58383;
+    background-color: #3a3a3a;
     color: white;
     padding-top: 20px;
 }
@@ -21,9 +21,9 @@ header h1 {
 }
 
 nav {
-    background-color: #6f71f3;
+    background-color: #03058d;
     padding: 15px 0;
-    max-width: 100%;
+   
 }
 
 nav ul {
@@ -34,7 +34,7 @@ nav ul {
     margin: 0 auto;
     padding: 0;
     gap: 5px;
-    max-width: 1200px;
+    
 }
 
 nav ul li {
@@ -65,15 +65,7 @@ nav a:hover {
 }
 
 .aside-container {
-    background-color: #017084;
-    flex: 1;
-    padding: 30px;
-    border-left: 1px solid #ddd;
-    border-top: 1px solid #ddd;
-}
-
-.aside-container {
-    background-color: #017084;
+    background-color: #618186;
     flex: 1;
     padding: 30px;
     border-left: 1px solid #ddd;
