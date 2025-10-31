@@ -13,25 +13,42 @@
     box-sizing: border-box;
 }    
 body {
-    font-family: "Lato", sans-serif;
+    font-family: var(--body-font);
     font-weight: 400;
     min-height: 100vh;
     display: flex ;
     flex-direction: column;
-}
+    background-color: #e8eef2;   /* remove it later */
+} 
 a {
     color: var(--accent-color2);
-
+    text-decoration: none;
 }    
 
 h1 {
-    font-family: "Lato",sans-serif;
+    font-family: var(--body-font);
     font-weight: 700;
+    font-size: 2.5em;
     text-align: center;
+    color: var(--accent-color2);
+    margin: 2rem 0;
+    grid-column: 1 / -1;
 }
 
 h2 {
-    font-family: "Lato", sans-serif;
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 1.8em;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+    text-align: center;
+    margin: -2rem -2rem 1.5em -2rem;
+    border-radius: 8px 8px 0 0;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
 }
 
 p, section {
@@ -41,25 +58,109 @@ p, section {
 
 nav {
     background-color: var(--secondary-color);
-    margin-top: 0.5px;
     padding: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    font-size: 1.1rem; 
+    gap: 1rem;   
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--accent-color2); 
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    transform: translateY(-2px);
+
+}
+
+nav a:hover {                            /* hover effects */
+    background-color: var(--accent-color1);
+    color: var(--primary-color);
     
 }
 
 header {
     background-color: var(--primary-color);
-    color: rgb(255, 255, 255);
+    color: var(--secondary-color);
     padding-top: 1.5rem;
     text-align: center;
 }
 
-span {
-    height: 200;
 
+header span {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex: 1;
+}
+
+/* main element */
+main {
+    max-width: 1200px; /* CSS Grid for cards */
+    width: 100%;
+    margin: 2 rem auto;
+    padding: 0 2rem;
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2 rem;
+}
+
+main h1 {
+    grid-column: 1;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+}
+.card li {
+    margin: 0.5rem 0;
+    line-height: 1.8;
+}    
+
+.card li a {
+   color: #23096d;
+   text-decoration: underline;
+}    
+
+.card img {
+    max-width: 200px;
+    height: auto;
+    float: right;
+    margin: 0 0 1rem 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.card li a:hover {
+    color: var(--accent-color1)
+}
+/* */
+.card h3 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin: 1.5rem 0 1rem 0;
+    text-align: center
 }
 
 footer {
