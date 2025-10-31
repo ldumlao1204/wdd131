@@ -165,30 +165,32 @@ main h1 {
 }
 
 .card .flag-container {
-    text-align: left;
-    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+    max-width: 800px;
+    margin: 2rem auto;
+    gap: 1.5rem;
 }
 
-.card .flag-container img {
-    float: left;
-    width: 100%;
+figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+img {
+    width: 160px;
     height: auto;
-    display: block;
-    margin-bottom: 0.5rem;
-    
+    border: 0.5px solid #ccc;
 }
 
-.card .flag-caption {
-    clear: both;
+figcaption {
+    font-size: 0.80rem;
+    color:#6e6363;
+    text-align: center;
     font-style: italic;
-    font-size: 0.9em;
-    color: #666;
-    text-align: left;
-    margin-top: 0.5rem;
-}
-
-.card .flag-container p {
-    position: right;
 }
 
 footer {
