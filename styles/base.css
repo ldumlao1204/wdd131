@@ -32,7 +32,7 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     color: var(--primary-color);
-    margin: auto;
+    margin-top: 0.5rem;
     grid-column: 1 / -1;
 }
 
@@ -103,7 +103,6 @@ header span {
 }
 
 main {
-    max-width: 1200px;
     width: 100%;
     margin: 1rem auto;
     padding: 0 2rem;
@@ -112,7 +111,6 @@ main {
 
 /* main element */
 main {
-    max-width: 1200px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -174,18 +172,23 @@ main h1 {
 
 .card .flag-container {
     display: flex;
-    align-items: flex-start;
-    max-width: 800px;
-    margin: 1.5rem auto;
-    gap: 1.5rem;
+    align-items: center; /* Vertically center flag and description */
+    margin: 2rem 0 0.5rem 0; /* Reduce bottom margin */
+    gap: 2.5rem; /* More space between flag and description */
 }
 
-figure {
-    margin: 0;
+.flag-container figure {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 150px;
+}
+
+.flag-description {
+    margin: 0;
+    align-self: flex-start;
+    padding-left: 0.5rem;
+  
 }
 
 img {
@@ -194,11 +197,10 @@ img {
     border: 0.5px solid #ccc;
     margin-left: 0.5px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-    
 }
 
 figcaption {
-    font-size: 0.80rem;
+    font-size: .90rem;
     text-align: center;
     font-style: italic;
 }
