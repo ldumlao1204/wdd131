@@ -2,7 +2,7 @@
     --primary-color: #1b263b; /* deep sea darkblue */
     --secondary-color: #e3d5ca; /* soft sand light */
     --accent-color1: #adc178; /* earthy tones light green */
-    --accent-color2: #e5d1d0;
+    --accent-color2: #303304;
     --heading-font: "Anton", sans-serif;
     --body-font: "Lato", sans-serif;
 }
@@ -16,17 +16,53 @@ body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
     min-height: 100vh;
-    display: flex;
+    display: flex ;
     flex-direction: column;
 }
 a {
-    color: var(--accent-color1);
+    color: var(--accent-color2);
+
 }    
 
 h1 {
+    font-family: "Lato",sans-serif;
     font-weight: 700;
+    text-align: center;
 }
-header, footer {
+
+h2 {
+    font-family: "Lato", sans-serif;
+}
+
+p, section {
+    margin: 16px;
+    padding: 5px; 
+}
+
+nav {
+    background-color: var(--secondary-color);
+    margin-top: 0.5px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+header {
+    background-color: var(--primary-color);
+    color: rgb(255, 255, 255);
+    padding-top: 1.5rem;
+    text-align: center;
+}
+
+span {
+    height: 200;
+
+}
+
+footer {
     background-color: var(--primary-color);
     color: rgb(255, 255, 255);
     padding: 1.5rem;
