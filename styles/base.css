@@ -81,7 +81,7 @@ nav a {
 
 nav a:hover {                         
     background-color: var(--accent-color1);
-    color: var(--primary-color);
+    color: #0000ff;
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -145,20 +145,13 @@ main h1 {
 }    
 
 .card li a {
-   color: #23096d;
+   color: #001170;
    text-decoration: underline;
 }    
 
-.card li a:link {
-        color: blue;
-}
-.card li a:visited {
-        color: purple;
-}
-
 .card li a:hover {
     background-color: var(--accent-color1);
-    color: var(--primary-color);
+    color: #0000ff;
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }    
