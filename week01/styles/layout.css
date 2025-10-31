@@ -59,14 +59,14 @@ main {
 
 .container {
     display: grid;
-    grid-template-columns: 60% 50% minmax(100px, auto);
-    grid-template-rows: minmax(200px, auto) 500px 300px;
+    grid-template-columns: 60% 40% minmax(100px, auto);
+    grid-template-rows: minmax(200px, auto) 250px 250px;
 }
 
 .main-container {
     background-color: #c5c5c5;
     padding: 30px;
-    height: 500%;
+    height: 350%;
 
 }
 
@@ -75,7 +75,7 @@ main {
     padding: 30px;
     border-left: 1px solid #ddd;
     border-top: 1px solid #ddd;
-    height: 500%;
+    height: 350%;
 }
 
 footer {
