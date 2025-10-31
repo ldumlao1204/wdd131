@@ -149,6 +149,13 @@ main h1 {
    text-decoration: underline;
 }    
 
+.card li a:link {
+        color: blue;
+}
+.card li a:visited {
+        color: purple;
+}
+
 .card li a:hover {
     background-color: var(--accent-color1);
     color: var(--primary-color);
