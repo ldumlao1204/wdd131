@@ -1,9 +1,12 @@
 :root {
     --primary-color: #1b263b; /* deep sea darkblue */
     --secondary-color: #e3d5ca; /* soft sand light */
-    --heading-font: 
+    --accent-color1: #adc178; /* earthy tones light green */
+    --accent-color2: #e5d1d0;
+    --heading-font: "Anton", sans-serif;
     --body-font: "Lato", sans-serif;
 }
+
 * {
     margin: 0;
     padding: 0;
@@ -11,17 +14,21 @@
 }    
 body {
     font-family: "Lato", sans-serif;
+    font-weight: 400;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+a {
+    color: var(--accent-color1);
+}    
 
 h1 {
     font-weight: 700;
 }
-header {
+header, footer {
     background-color: var(--primary-color);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 1.5rem;
     text-align: center;
 }
