@@ -28,7 +28,7 @@ a {
 h1 {
     font-family: var(--body-font);
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
     color: var(--accent-color2);
     margin: auto;
@@ -59,7 +59,7 @@ p, section {
 
 nav {
     background-color: var(--secondary-color);
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -71,56 +71,56 @@ nav {
 nav a {
     text-decoration: none;
     color: var(--accent-color2); 
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     transition: all 0.3s ease;
     border-radius: 4px;
     transform: translateY(-2px);
-
 }
 
-nav a:hover {                            /* hover effects */
+nav a:hover {                         
     background-color: var(--accent-color1);
     color: var(--primary-color);
-    
 }
 
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding-top: 1.5rem;
+    padding-top: 1rem;
     text-align: center;
 }
-
 
 header span {
     display: block;
     font-size: 1.8rem;
     font-weight: 400;
+    padding: 1rem;
+    margin-bottom: 1rem;
     letter-spacing: 0.5px;
 }
 
 main {
     max-width: 1200px;
     width: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 0 2rem;
     flex: 1;
 }
 
 /* main element */
 main {
-    max-width: 1200px; /* CSS Grid for cards */
+    max-width: 1200px;
     width: 100%;
     margin: 2 rem auto;
     padding: 0 1rem;
     flex: 1;
     display: grid;
-    grid-template-columns: 3fr 1.5fr;
+    grid-template-columns: 4fr 2fr;
     gap: 0.5rem;
 }
 
 main h1 {
     grid-column: 1 / -1;
+    padding: 0.5px;
 }
 
 .card {
@@ -168,7 +168,7 @@ main h1 {
     display: flex;
     align-items: flex-start;
     max-width: 800px;
-    margin: 2rem auto;
+    margin: 1.5rem auto;
     gap: 1.5rem;
 }
 
@@ -181,9 +181,10 @@ figure {
 }
 
 img {
-    width: 160px;
+    width: 180px;
     height: auto;
     border: 0.5px solid #ccc;
+    margin-left: 0.5px;
 }
 
 figcaption {
