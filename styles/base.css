@@ -80,7 +80,7 @@ nav a {
 }
 
 nav a:hover {                         
-    background-color: var(--accent-color1);
+    background-color: var(--accent-color);
     transform: translateY(1px);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -90,7 +90,7 @@ nav a:hover {
 /* Header Style */
 header {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--accent-color);
     padding-top: 10px;
     text-align: center;
 }
@@ -209,7 +209,7 @@ figcaption {
 
 footer {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
+    color: var(--accent-color);
     padding: 0.5rem;
     text-align: center;
     margin-top: auto;
@@ -221,7 +221,7 @@ footer p {
 }
 
 footer p:last-child {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-size: 1em;
 }
 /* End fo Footer */
