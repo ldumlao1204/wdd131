@@ -156,7 +156,7 @@ main h1 {
 }
 
 .card h3 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--primary-color);
     margin: 1.5rem 0 1rem 0;
     text-align: center;
@@ -166,7 +166,7 @@ hr {
     width: 60%;
     margin: 1rem auto;
     border: none;
-    height: 1.5px;
+    height: 1px;
     background: linear-gradient(to right, transparent, var(--primary-color) 10%, var(--primary-color) 80%, transparent);
 }
 
@@ -218,6 +218,7 @@ footer {
 footer p {
     margin: 0.5rem 0;
     line-height: 1.2;
+    font-size: 1em;
 }
 
 footer p:last-child {
