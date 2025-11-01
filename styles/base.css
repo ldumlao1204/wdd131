@@ -84,7 +84,7 @@ nav a {
 
 nav a:hover {
     background-color: var(--accent-color2);
-    color: var(--accent-color1);
+    color: var(--secondary-color);
     transform: translateY(1px);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
@@ -148,6 +148,7 @@ main h1 {
 }
 
 .card li a:hover {
+    text-decoration: none;
     color: var(--accent-color2);
     padding: 0.5rem;
     border-radius: 8px;
