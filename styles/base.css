@@ -1,8 +1,10 @@
 :root {
-    --primary-color: #001d3d; /* deep sea darkblue */
+    --primary-color: #2a2b29;   /* dark olive green */
     --secondary-color: #e3d5ca; /* soft sand light */
+    --accent-color: #f8f9fa; /* white light steel */
     --accent-color1: #ebf4f5;; /* earthy tones very light blue */
-    --accent-color2: #2a2b29; /* dark olive green */
+    --accent-color2: #001d3d;  /* deep sea darkblue */
+    --accent-color3:#0521be;
     --heading-font: "Anton", sans-serif;
     --body-font: "Lato", sans-serif;
 }
@@ -18,7 +20,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-color: #ebf4f5;  
+    background-color: var(--accent-color1);  
 } 
 a {
     color: var(--accent-color2);
@@ -41,7 +43,7 @@ h2 {
     font-family: var(--body-font);
     font-weight: 700;
     font-size: 1.8em;
-    color: var(--secondary-color);
+    color: var(--accent-color1);
     background-color: var(--primary-color);
     text-align: center;
     margin: -2rem -2rem 1.5em -2rem;
@@ -79,8 +81,8 @@ nav a {
 
 nav a:hover {                         
     background-color: var(--accent-color1);
-    color: #0000ff;
     transform: translateY(1px);
+    border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 /* End of Navigation Style */
@@ -118,7 +120,7 @@ main h1 {
 }
 
 .card {
-    background-color: white;
+    background-color: var(--accent-color);
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
@@ -135,15 +137,14 @@ main h1 {
 }    
 
 .card li a {
-   color: #001170;
-   text-decoration: underline;
+   color: var(--accent-color3);
+   text-decoration: none;
 }    
 
 .card li a:hover {
-    background-color: var(--accent-color1);
-    color: #0000ff;
-    transform: translateY(1px);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    color: var(--accent-color2);
+    padding: 0.5rem;
+    border-radius: 8px; 
 }    
 
 .card img {
@@ -192,7 +193,7 @@ hr {
 
 .flag-container figure img {
     width: 180px;
-    border: 0.5px solid #ccc;
+    border: 0.5px solid var(--accent-color1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
