@@ -32,7 +32,7 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     color: var(--primary-color);
-    margin-top: 0.5rem;
+    margin-top: 0.8rem;
     grid-column: 1 / -1;
 }
 
@@ -49,8 +49,7 @@ h2 {
 }
 
 p {
-    line-height: 1.6;
-    margin-bottom: 0.5rem;
+    line-height: 1.2;
     font-size: 1.2rem;
 }
 
@@ -92,14 +91,13 @@ nav a:hover {
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     text-align: center;
 }
 
 header span {
     display: block;
     font-size: 1.8rem;
-    font-weight: 400;
     padding: 1rem;
     margin-bottom: 1rem;
     letter-spacing: 0.5px;
@@ -118,7 +116,7 @@ main {
 main {
     max-width: 1400px;
     width: 100%;
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 0 1rem;
     flex: 1;
     display: grid;
@@ -127,7 +125,6 @@ main {
 }
 
 main h1 {
-    grid-column: 1 / -1;
     padding: 0.5px;
 }
 
@@ -163,7 +160,7 @@ main h1 {
 .card img {
     max-width: 160px;
     float: right;
-    margin: 0 0 1rem 1rem;
+    margin: 1rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     border-radius: 5px;
 }
@@ -173,36 +170,41 @@ main h1 {
     font-size: 1.5em;
     color: var(--primary-color);
     margin: 1.5rem 0 1rem 0;
-    text-align: center;
+    text-align: center ;
+    }
+
+hr {
+    width: 60%;
+    margin: 1rem auto;
+    border: none;
+    height: 1.5px;
+    background: linear-gradient(to right, transparent, var(--primary-color) 10%, var(--primary-color) 80%, transparent);
 }
 
 .card .flag-container {
     display: flex;
     align-items: flex-center; 
-    margin: 2rem 0 0.5rem 0; 
-    gap: 2rem; 
+    margin: 1rem 0 1rem 0; 
+    gap: 1rem; 
 }
 
 .flag-container figure {
     display: flex;
     flex-direction: column;
-    align-items: center;
     flex-shrink: 0;
-    width: 150px;
+    align-items: center;
 }
 
-.flag-description {
-    margin: 0;
+.flag-description {   
+    margin: 0; 
     text-align: left;
     padding-left: 0;
     flex: 1;
 }
 
-img {
+.flag-container figure img {
     width: 180px;
-    height: auto;
     border: 0.5px solid #ccc;
-    margin-left: 0.5px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
@@ -210,6 +212,7 @@ figcaption {
     font-size: .90rem;
     text-align: center;
     font-style: italic;
+    padding-left: 0.8px;
 }
 
 footer {
@@ -230,3 +233,4 @@ footer p:last-child {
     font-size: 1em;
 }
 
+/* End of Home Page Style */
