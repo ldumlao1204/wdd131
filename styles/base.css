@@ -16,7 +16,7 @@ body {
     font-family: var(--body-font);
     font-weight: 400;
     min-height: 100vh;
-    display: flex ;
+    display: flex;
     flex-direction: column;
     background-color: #ebf4f5;  
 } 
