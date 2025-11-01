@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #183a37; /* dark olive green */
-    --secondary-color: #b6ac00; /* soft sand light */
+    --primary-color: #001845; /* dark blue */
+    --secondary-color: #779be7; /* soft sand light */
     --accent-color: #f8f9fa; /* white light steel */
-    --accent-color1: #ebf5f3; /* earthy tones very light blue */
+    --accent-color1: #eef4ed; /* earthy tones very light blue */
     --accent-color2: #001d3d; /* deep sea darkblue */
     --accent-color3: #0521be; 
     --heading-font: "Anton", sans-serif;
