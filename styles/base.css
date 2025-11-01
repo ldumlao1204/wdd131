@@ -32,7 +32,6 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     color: var(--primary-color);
-    margin-top: 0.8rem;
     grid-column: 1 / -1;
 }
 
@@ -106,7 +105,6 @@ header span {
 /* Main Container */
 main {
     max-width: 1400px;
-    width: 100%;
     margin: 1rem auto;
     padding: 0 2rem;
     flex: 1;
@@ -115,7 +113,6 @@ main {
 /* main element */
 main {
     max-width: 1400px;
-    width: 100%;
     margin: 1rem auto;
     padding: 0 1rem;
     flex: 1;
