@@ -1,6 +1,6 @@
 :root {
     --primary-color: #001845; /* dark blue */
-    --secondary-color: #779be7; /* soft sand light */
+    --secondary-color: #facb4b; /* soft sand light */
     --accent-color: #f8f9fa; /* white light steel */
     --accent-color1: #eef4ed; /* earthy tones very light blue */
     --accent-color2: #001d3d; /* deep sea darkblue */
@@ -75,7 +75,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    color: var(--accent-color2);
+    color: var(--primary-color);
     padding: 0.5rem;
     transition: all 0.3s ease;
     border-radius: 8px;
@@ -83,7 +83,7 @@ nav a {
 }
 
 nav a:hover {
-    background-color: var(--accent-color2);
+    background-color: var(--primary-color);
     color: var(--secondary-color);
     transform: translateY(1px);
     border-radius: 8px;
