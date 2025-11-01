@@ -59,6 +59,7 @@ p, section {
     padding: 5px; 
 }
 
+/* Navigation Style */
 nav {
     background-color: var(--secondary-color);
     padding: 0.5rem;
@@ -85,7 +86,9 @@ nav a:hover {
     transform: translateY(1px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
+/* End of Navigation Style */
 
+/* Header Style */
 header {
     background-color: var(--primary-color);
     color: var(--secondary-color);
@@ -102,7 +105,9 @@ header span {
     letter-spacing: 0.5px;
 }
 
+/* Main Container */
 main {
+    max-width: 1400px;
     width: 100%;
     margin: 1rem auto;
     padding: 0 2rem;
@@ -111,6 +116,7 @@ main {
 
 /* main element */
 main {
+    max-width: 1400px;
     width: 100%;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -172,23 +178,24 @@ main h1 {
 
 .card .flag-container {
     display: flex;
-    align-items: center; /* Vertically center flag and description */
-    margin: 2rem 0 0.5rem 0; /* Reduce bottom margin */
-    gap: 2.5rem; /* More space between flag and description */
+    align-items: flex-center; 
+    margin: 2rem 0 0.5rem 0; 
+    gap: 2rem; 
 }
 
 .flag-container figure {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-shrink: 0;
     width: 150px;
 }
 
 .flag-description {
     margin: 0;
-    align-self: flex-start;
-    padding-left: 0.5rem;
-  
+    text-align: left;
+    padding-left: 0;
+    flex: 1;
 }
 
 img {
