@@ -103,7 +103,7 @@ header span {
 
 /* Main Body */
 main {
-    max-width: 1440px;
+    max-width: 1200px;
     flex: 1;
     margin: 20px auto;
     padding: 0 20px;
