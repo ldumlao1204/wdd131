@@ -49,14 +49,11 @@ h2 {
     padding: 10px;
 }
 
-p {
-    line-height: 1.2;
-    font-size: 1.2rem;
-}
-
 p, section {
     margin: 5px;
     padding: 5px; 
+    line-height: 1.2;
+    font-size: 1.2rem;
 }
 
 /* Navigation Style */
@@ -99,32 +96,26 @@ header {
 header span {
     display: block;
     font-size: 1.8rem;
-    padding: 20px;
+    padding: 10px;
     margin-bottom: 20px;
     letter-spacing: 0.5px;
 }
 
-/* Main Container */
+/* Main Body */
 main {
-    max-width: 1400px;
-    margin: 1rem auto;
-    padding: 0 2rem;
+    max-width: 1440px;
     flex: 1;
-}
-
-/* main element */
-main {
-    max-width: 1400px;
     margin: 20px auto;
     padding: 0 20px;
-    flex: 1;
     display: grid;
     grid-template-columns: 4fr 2fr;
     gap: 10px;
 }
 
 main h1 {
-    padding: 10px;
+    padding: 0.5px;
+    margin: 0.5px;
+    padding: 0.5px;
 }
 
 .card {
@@ -164,13 +155,12 @@ main h1 {
     border-radius: 5px;
 }
 
-
 .card h3 {
     font-size: 1.5em;
     color: var(--primary-color);
     margin: 1.5rem 0 1rem 0;
-    text-align: center ;
-    }
+    text-align: center;
+}
 
 hr {
     width: 60%;
@@ -213,6 +203,9 @@ figcaption {
     font-style: italic;
     padding-left: 0.8px;
 }
+/* End of Main Style */
+
+/* Footer Style */
 
 footer {
     background-color: var(--primary-color);
@@ -231,5 +224,5 @@ footer p:last-child {
     color: var(--secondary-color);
     font-size: 1em;
 }
-
+/* End fo Footer */
 /* End of Home Page Style */
