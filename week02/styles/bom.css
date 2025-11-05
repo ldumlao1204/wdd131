@@ -29,7 +29,8 @@ div {
     align-items: center;
 }
 
-input, button {
+input,
+button {
     padding: 0.5rem;
     margin: 0.5rem;
 }
