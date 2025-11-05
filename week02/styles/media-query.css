@@ -15,10 +15,10 @@ footer {
 main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 1rem
+    grid-gap: 1rem;
 }
 
 section {
     padding: 1rem;
-    background-color: #f0f4f8;
+    background-color: #ffffff;
 }
