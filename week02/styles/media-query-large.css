@@ -1,0 +1,13 @@
+@media screen and (min-width: 600px) {
+
+    /* make header black background with white text when the large media query applies */
+    header {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    /* ensure links inside the header are readable */
+    header a {
+        color: #ffffff;
+    }
+}
