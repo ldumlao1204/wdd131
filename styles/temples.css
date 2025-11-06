@@ -1,9 +1,54 @@
-* root {}
+:root {
+    --primary-color: #001845;
+    /* dark blue */
+    --secondary-color: #0911FB;
+    /* blue bright */
+    --font-color1: #f8f9fa;
+    /* white light steel */
+    --font-color1: #eef4ed;
+    /* earthy tones very light blue */
+    --accent-color2: #001d3d;
+    /* deep sea darkblue */
+    --body-font: "Lato", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
+    font-family: var(--body-font);
+    font-weight: 400;
+    min-height: 100vh;
+    width: auto;
+    margin: 100px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    background-color: var(--accent-color1);
+    color: var(--font-color1);
+}
 
+a {
+    color: var(--accent-color2);
+    text-decoration: none;
+}
+
+h1 {
+    font-family: var(--body-font);
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--accent-color2);
+    grid-column: 1 / -1;
+    margin: 20px 0;
+    padding: 10px 0;
 }
