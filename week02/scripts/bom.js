@@ -37,6 +37,6 @@ button.addEventListener('click', function () {
 
 
 
-<button aria-label="Close" id="close-button">❌</button>
+
 
 
