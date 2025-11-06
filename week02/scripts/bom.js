@@ -30,6 +30,8 @@ button.addEventListener('click', function () {
 
         input.value = '';
 
+    } else {
+        alert('Please enter a book chapter.');
     }
 
     input.focus();
