@@ -1,11 +1,12 @@
 header {
     flex-wrap: nowrap;
     padding: 1rem 2rem;
+    justify-content: space-between;
 }
 
 .album-title {
     flex: 0 0 auto;
-    margin-right: 2rem;
+    font-size: 2rem;
 }
 
 /* Hide Hamburger Button in Larger View */
@@ -15,13 +16,13 @@ header {
 
 /* Navigation - Horizontal Flex Layout */
 nav {
+    position: static;
     width: auto;
-    order: 0;
-    flex: 1;
+    background-color: transparent;
 }
 
 nav ul {
-    display: flex;
+    display: flex !important;
     /* Always visible in larger view */
     flex-direction: row;
     justify-content: flex-end;
@@ -31,39 +32,45 @@ nav ul {
 
 nav li {
     width: auto;
+    border-bottom: none;
 }
 
 nav a {
     padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+}
+
+nav a:hover,
+nav a:active {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 /* Main Content */
 main {
+    max-width: 1200px;
     padding: 3rem 2rem;
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     margin-bottom: 3rem;
 }
 
 /* Temple Gallery Grid - 3 Columns for Larger Screens */
 #temple-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
-
-/* Alternative: Auto-fit with minmax for more flexibility */
-/* 
-    #temple-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
-    */
 
 /* Figure Styles - Enhanced for Larger View */
 figure {
     border-radius: 12px;
+}
+
+figure img {
+    height: 250px;
+    object-fit: cover;
 }
 
 figcaption {
@@ -73,18 +80,29 @@ figcaption {
 
 /* Footer */
 footer {
-    padding: 2rem;
+    padding: 1rem;
 }
 
 
 /* Extra Large Screens - Optional Enhancement */
 @media screen and (min-width: 1200px) {
+    header {
+        padding: 1.5rem 3rem;
+    }
 
     main {
         padding: 4rem 3rem;
     }
 
+    h1 {
+        font-size: 3rem;
+    }
+
     #temple-gallery {
         gap: 2.5rem;
+    }
+
+    figure img {
+        height: 300px;
     }
 }
