@@ -8,57 +8,70 @@
     <meta name="description" content="Picture Album | Picture Gallery of different temples around the world.">
     <meta name="author" content="Leilany Dumlao">
     <link rel="stylesheet" href="styles/temples.css">
-
+    <link rel="stylesheet" href="styles/temples-large.css">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-
+    
     <script src="scripts/temples.js" defer></script>
     <script src="scripts/getdates.js" defer></script>
-
 </head>
 
 <body>
     <header>
-        <span id="album-title">Temple Album</span>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Old</a></li>
-                <li><a href="#">New</a></li>
-                <li><a href="#">Small</a></li>           
-            </ul>
-        
-        </nav>
+        <h2 id="album-title">Temple Album</h2>
         <button id="menu-button">☰</button>
+        <nav>
+            <ul id="nav-menu">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#" data-filter="old">Old</a></li>
+                <li><a href="#" data-filter="new">New</a></li>
+                <li><a href="#" data-filter="small">Small</a></li>
+            </ul>
+        </nav> 
     </header>    
  
     <main>
         <h1>Home</h1>
-        <figure>
-            <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple"> 
-            <figcaption>Alabang Philippines Temple</figcaption>
-        </figure>
-        <figure>
-            <img src="images/manila-ph.webp" alt="Manila Philippines Temple"> 
-            <figcaption>Manila Philippines Temple</figcaption>
-        </figure>
-        <figure>
-            <img src="images/urdaneta-ph.webp" alt="Urdaneta Philippines Temple">
-            <figcaption>Urdaneta Philippines Temple</figcaption>
-        </figure>
-        <figure>
-            <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple">
-            <figcaption>Alabang Philippines Temple</figcaption>
-        </figure>
-        <figure>
-            <img src="images/manila-ph.webp" alt="Manila Philippines Temple">
-            <figcaption>Manila Philippines Temple</figcaption>
-        </figure>
-        <figure>
-            <img src="images/urdaneta-ph.webp" alt="Urdaneta Philippines Temple">
-            <figcaption>Urdaneta Philippines Temple</figcaption>
-        </figure>
+        <div id="temple-gallery"></div>
+            <figure>
+                <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple"> 
+                <figcaption>Alabang Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/manila-ph.webp" alt="Manila Philippines Temple"> 
+                <figcaption>Manila Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/urdaneta-ph.webp" alt="Urdaneta Philippines Temple">
+                <figcaption>Urdaneta Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple">
+                <figcaption>Alabang Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/manila-ph.webp" alt="Manila Philippines Temple">
+                <figcaption>Manila Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/urdaneta-ph.webp" alt="Urdaneta Philippines Temple">
+                <figcaption>Urdaneta Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple">
+                <figcaption>Alabang Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/manila-ph.webp" alt="Manila Philippines Temple">
+                <figcaption>Manila Philippines Temple</figcaption>
+            </figure>
+            <figure>
+                <img src="images/urdaneta-ph.webp" alt="Urdaneta Philippines Temple">
+                <figcaption>Urdaneta Philippines Temple</figcaption>
+            </figure>
+        </div>    
     </main>
 
     <footer>
