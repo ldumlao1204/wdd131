@@ -1,6 +1,6 @@
 :root {
     --primary-color: #052461;
-    --secondary-color: #57021b;
+    --secondary-color: #B6B4FE;
     --font-color1: #fcfcfc;
     --font-color2: #000711;
     --accent-color: #a29306;
@@ -27,7 +27,7 @@ header {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
 }
 
@@ -52,7 +52,7 @@ header {
 }
 
 .menu-button:hover {
-    color: 2px solid var(--accent-color);
+    color: 2px solid var(--secondary-color);
 }
 
 /* Navigation Styling */
@@ -86,21 +86,19 @@ nav li {
 
 nav a {
     background-color: #052461;
-    color: var(--accent-color);
-    text-decoration: underline;
+    color: var(--font-color1);
+    text-decoration: none;
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--secondary-color);
-    color: var(--accent-color);
+    color: var(--secondary-color);
     border-radius: 8px;
     transform: translateY(1px);
 }
 
 /* Main Content Styling */
-
 main {
     display: grid;
     max-width: 800px;
@@ -164,6 +162,4 @@ footer {
 footer p {
     font-size: 1rem;
     padding: 0.5rem;
-}
-
 }
