@@ -2,8 +2,8 @@
     --primary-color: #022462;
     --secondary-color: #9d0abe;
     --font-color1: #01070e;
-    --font-color1: #1f810e;
-    --accent-color2: #9e0664;
+    --font-color1: #a7ad12;
+    --accent-color2: #559e06;
     --body-font: "Lato", sans-serif;
 }
 
@@ -18,10 +18,21 @@ body {
     font-weight: 400;
     min-height: 100vh;
     background-color: var(--accent-color1);
+    /* ***change this */
     color: var(--font-color1);
 }
 
 /* Header Styling */
+header {
+    background-color: var(--primary-color);
+    color: rgb(251, 251, 251);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
 .album-title {
     font-size: 3rem;
     font-weight: 700;
@@ -30,7 +41,10 @@ body {
 }
 
 .menu-button {
+    position: absolute;
     background: none;
+    right: 1rem;
+    top: 50%;
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
@@ -47,22 +61,57 @@ body {
 nav {
     background-color: var(--secondary-color);
     padding: 0.5rem;
-    display: flex;
+    display: block;
     flex-direction: row;
     justify-content: space-evenly;
+    margin-right: 3rem;
     align-items: center;
     font-size: 1.5rem;
     gap: 0.5rem;
 }
 
 nav ul {
-    list-style: none;
-    display: none;
-    flex-direction: column;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    padding: 0;
     gap: 5px;
+}
+
+nav ul.open {
+    display: flex;
+    text-align: center;
+}
+
+nav li {
+    width: 100%;
+}
+
+nav a {
+    display: block;
+    color: var(--font-color1);
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
+    color: var(--accent-color2);
+    transform: translateY(1px);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Styling */
+
+main {
+    display: grid;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 h1 {
@@ -70,8 +119,60 @@ h1 {
     font-weight: 700;
     font-size: 3rem;
     text-align: center;
-    color: var(--accent-color2);
-    grid-column: 1 / -1;
-    margin: 20px 0;
-    padding: 10px 0;
+    margin-bottom: 2rem;
+}
+
+/* Temple Gallery Styling */
+.temple-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Check this */
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Temple figure styling */
+figure {
+    display: block;
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    text-align: center;
+}
+
+figure:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+figcaption {
+    padding: 1.25rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--font-color1);
+}
+
+/* Footer Styling */
+footer {
+    background-color: var(--primary-color);
+    color: rgb(251, 251, 251);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 2rem;
+}
+
+footer p {
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
 }
