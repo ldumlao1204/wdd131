@@ -1,9 +1,9 @@
 :root {
-    --primary-color: #022462;
-    --secondary-color: #9d0abe;
-    --font-color1: #01070e;
-    --font-color1: #a7ad12;
-    --accent-color2: #559e06;
+    --primary-color: #052461;
+    --secondary-color: #57021b;
+    --font-color1: #fcfcfc;
+    --font-color2: #000711;
+    --accent-color: #a29306;
     --body-font: "Lato", sans-serif;
 }
 
@@ -17,15 +17,13 @@ body {
     font-family: var(--body-font);
     font-weight: 400;
     min-height: 100vh;
-    background-color: var(--accent-color1);
-    /* ***change this */
-    color: var(--font-color1);
+    color: var(--font-color2);
 }
 
 /* Header Styling */
 header {
     background-color: var(--primary-color);
-    color: rgb(251, 251, 251);
+    color: var(--font-color1);
     padding: 20px;
     display: flex;
     align-items: center;
@@ -48,21 +46,19 @@ header {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--font-color1);
+    color: var(--font-color2);
     padding: 1rem;
     display: block;
 }
 
 .menu-button:hover {
-    color: 2px solid var(--accent-color2);
+    color: 2px solid var(--accent-color);
 }
 
 /* Navigation Styling */
 nav {
-    background-color: var(--secondary-color);
     padding: 0.5rem;
-    display: block;
-    flex-direction: row;
+    display: flex;
     justify-content: space-evenly;
     margin-right: 3rem;
     align-items: center;
@@ -89,20 +85,18 @@ nav li {
 }
 
 nav a {
-    display: block;
-    color: var(--font-color1);
-    text-decoration: none;
-    text-align: center;
-    padding: 0.5rem;
+    background-color: #052461;
+    color: var(--accent-color);
+    text-decoration: underline;
+    padding: 0.5rem 1rem;
     transition: all 0.3s ease;
 }
 
 nav a:hover {
-    background-color: var(--primary-color);
-    color: var(--accent-color2);
-    transform: translateY(1px);
+    background-color: var(--secondary-color);
+    color: var(--accent-color);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
 }
 
 /* Main Content Styling */
@@ -117,7 +111,7 @@ main {
 h1 {
     font-family: var(--body-font);
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 4rem;
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -126,6 +120,7 @@ h1 {
 .temple-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+
     /* Check this */
     gap: 2rem;
     padding: 1rem 0;
@@ -134,9 +129,6 @@ h1 {
 /* Temple figure styling */
 figure {
     display: block;
-    background-color: var(--accent-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     overflow: hidden;
     text-align: center;
 }
@@ -144,7 +136,6 @@ figure {
 figure:hover {
     transform: scale(1.02);
     transition: transform 0.3s ease;
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 figure img {
@@ -155,9 +146,9 @@ figure img {
 
 figcaption {
     padding: 1.25rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
-    color: var(--font-color1);
+    color: var(--font-color2);
 }
 
 /* Footer Styling */
