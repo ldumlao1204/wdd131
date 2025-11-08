@@ -97,7 +97,7 @@ main {
 
 /* Heading */
 h1 {
-    font-family: var(--font-color2);
+    font-family: var(--body-font);
     font-weight: 600;
     font-size: 3rem;
     text-align: center;
