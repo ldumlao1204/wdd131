@@ -4,16 +4,16 @@ const navigation = document.querySelector('.navigation');
 
 // Add click event to menu button
 menuButton.addEventListener('click', () => {
-    // Toggle both the menu button and navigation
+
     menuButton.classList.toggle('open');
     navigation.classList.toggle('open');
 
-    // Update aria-expanded attribute for accessibility
+
     const isExpanded = navigation.classList.contains('open');
     menuButton.setAttribute('aria-expanded', isExpanded);
 });
 
-// Reset when screen gets large
+// Close menu on window resize if width >= 768px
 window.addEventListener('resize', () => {
     if (window.innerWidth >= 768) {
         menuButton.classList.remove('open');
