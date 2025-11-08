@@ -1,50 +1,25 @@
-/* Header and Navigation for large screens */
-header {
-    background-color: var(--primary-color);
-    padding: 1rem;
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
-.album-title {
-    font-size: 1.5rem;
-    color: white;
-    margin-right: 2rem;
-}
-
-/* Hide Hamburger Button in Larger View */
-#menu {
-    display: none;
-}
-
-/* Navigation - Horizontal Flex Layout */
-nav {
-    flex: 1;
-    width: auto;
-    height: auto;
-    background: none;
-    display: flex;
-    justify-content: space-evenly;
-}
+/* ==================== TABLET AND DESKTOP STYLES (768px+) ==================== */
+/* This file contains only the overrides for larger screens */
+/* Load after temples.css in your HTML */
 
 @media screen and (min-width: 768px) {
     header {
-        background-color: var(--primary-color);
         padding: 1rem 2rem;
-        display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
+        flex-wrap: nowrap;
     }
 
     .album-title {
         color: var(--nav-font-color);
         margin: 0;
         font-size: 1.6rem;
+        flex: initial;
+        margin-right: 0;
     }
 
-    /* Hide hamburger completely on larger screens (strong, specific overrides) */
+    /* Hide hamburger completely on larger screens */
     #menu,
     button#menu,
     #menu::before,
@@ -62,13 +37,10 @@ nav {
         content: none !important;
     }
 
-    /* Navigation displayed horizontally and centered */
-    /* Center nav by absolutely positioning it in the header and
-       constrain its width so items can be spaced evenly */
+    /* Center navigation absolutely in header */
     nav {
         position: absolute !important;
         left: 50% !important;
-        transform: translateX(-50%) !important;
         top: 50% !important;
         transform: translate(-50%, -50%) !important;
         background: none !important;
@@ -78,32 +50,31 @@ nav {
         padding: 0;
     }
 
+    /* Navigation displayed horizontally and always visible on desktop */
     .navigation {
         display: flex !important;
         flex-direction: row !important;
         justify-content: space-between !important;
         gap: 0;
-        margin: 0 auto;
-        padding: 0;
-        list-style: none;
         align-items: end;
         width: min(60%, 720px);
+        background: none !important;
     }
 
     .navigation li {
+        width: auto;
         padding: 1rem;
         margin: 0;
         border: none;
+        border-top: none;
     }
 
     .navigation a {
         color: #ffffff;
-        text-decoration: none;
         padding: 0.5rem 0.75rem;
-        font-size: 1rem;
+        font-weight: 300;
         display: inline-block;
-        border-left: none;
-
+        text-align: left;
     }
 
     .navigation a,
@@ -117,31 +88,28 @@ nav {
     }
 
     .navigation a:hover {
-        background-color: yellow;
+        background-color: yellow !important;
         color: orange;
     }
 
+    /* Temple Gallery - 3 Column Grid */
     .temple-gallery {
-        display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
         gap: 1.5rem !important;
         padding: 2rem 0 !important;
-        margin: 0 auto;
-        max-width: 1200px;
     }
 
     figure {
         background: white;
-        overflow: hidden;
-        display: block;
+        border-radius: 4px;
+    }
+
+    figure:hover {
+        transform: translateY(-5px);
     }
 
     figure img {
-        width: 100%;
-        height: auto;
         aspect-ratio: 1 / 1;
-        object-fit: cover;
-        display: block;
         transition: transform 0.3s ease;
     }
 
@@ -151,93 +119,11 @@ nav {
 
     figcaption {
         padding: 0.75rem 1rem;
-        text-align: center;
+        color: var(--primary-color);
     }
 }
 
-.navigation {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.navigation li {
-    width: auto;
-    margin: 0;
-    border: none;
-}
-
-.navigation a {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    font-weight: 300;
-    transition: opacity 0.3s ease;
-    display: block;
-    background: transparent !important;
-}
-
-.navigation a:hover,
-.navigation a:focus {
-    background: transparent !important;
-
-}
-
-/* Temple Gallery Grid - 3x3 Layout */
-.temple-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(300px, 1fr));
-    gap: 5rem;
-    padding: 2rem 0;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-/* Figure Styles */
-figure {
-    transition: transform 0.3s ease;
-    border-radius: 4px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-figure:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-figure img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    display: block;
-}
-
-figure:hover img {
-    transform: scale(1.05);
-}
-
-figcaption {
-    padding: 1rem;
-    text-align: center;
-    font-size: 1rem;
-    color: var(--primary-color);
-}
-
-/* Footer */
-footer {
-    padding: 1rem;
-}
-
-
-/* Extra Large Screens - Optional Enhancement */
+/* Extra Large Screens (1200px+) */
 @media screen and (min-width: 1200px) {
     header {
         padding: 1.5rem 3rem;
@@ -251,8 +137,8 @@ footer {
         font-size: 3rem;
     }
 
-    #temple-gallery {
-        gap: 2.5rem;
+    .temple-gallery {
+        gap: 2.5rem !important;
     }
 
     figure img {
