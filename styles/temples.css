@@ -89,7 +89,7 @@ nav {
 /* Main Content Styling */
 main {
     background-color: #0ccaec;
-    color: var(--font-color1);
+    color: black;
     padding: 0.5rem 1rem;
     /* Center the main container and constrain width for readability */
     width: 100%;

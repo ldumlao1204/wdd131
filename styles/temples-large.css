@@ -41,6 +41,8 @@ nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        /* allow absolutely positioned nav to center */
     }
 
     .album-title {
@@ -67,26 +69,34 @@ nav {
         content: none !important;
     }
 
-    /* Navigation displayed horizontally */
+    /* Navigation displayed horizontally and centered */
+    /* Center nav by absolutely positioning it in the header and
+       constrain its width so items can be spaced evenly */
     nav {
-        display: flex !important;
-        align-items: center;
-        justify-content: flex-end;
-        flex: 1;
+        position: absolute !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
         background: none !important;
-        position: static !important;
         width: auto !important;
         height: auto !important;
+        display: block !important;
+        padding: 0;
     }
 
     .navigation {
         display: flex !important;
         flex-direction: row !important;
-        gap: 1.25rem;
-        margin: 0;
+        justify-content: space-between !important;
+        /* equal spacing */
+        gap: 0;
+        margin: 0 auto;
         padding: 0;
         list-style: none;
         align-items: center;
+        width: min(60%, 720px);
+        /* constrain width so items spread evenly */
     }
 
     .navigation li {
@@ -101,6 +111,19 @@ nav {
         font-size: 1rem;
         display: inline-block;
         border-left: none;
+    }
+
+    /* Remove any background/highlight for all menu items on desktop */
+    .navigation a,
+    .navigation li {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    /* Ensure hover does not add background color on desktop */
+    .navigation a:hover {
+        background: transparent !important;
+        opacity: 0.9;
     }
 
     /* Force the gallery into a 3x3 grid and keep images square (no stretching) */
@@ -157,24 +180,25 @@ nav {
 }
 
 .navigation a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     padding: 0.5rem;
     font-size: 1rem;
     font-weight: 300;
     transition: opacity 0.3s ease;
     display: block;
+    background: transparent !important;
 }
 
-/* Main Content */
-main {
-    max-width: 1200px;
-    padding: 3rem 2rem;
+.navigation a:hover,
+.navigation a:focus {
+    background: transparent !important;
+    opacity: 0.9;
 }
 
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
+.navigation a.active {
+    background: transparent !important;
+    font-weight: 600;
 }
 
 /* Temple Gallery Grid - 3x3 Layout */
