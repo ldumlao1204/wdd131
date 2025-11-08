@@ -1,49 +1,169 @@
+/* Header and Navigation for large screens */
 header {
-    flex-wrap: nowrap;
-    padding: 1rem 2rem;
+    background-color: purple;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
 .album-title {
-    flex: 0 0 auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 2rem;
 }
 
 /* Hide Hamburger Button in Larger View */
-.menu-button {
+#menu {
     display: none;
 }
 
 /* Navigation - Horizontal Flex Layout */
 nav {
+    flex: 1;
     position: static;
     width: auto;
-    background-color: transparent;
+    height: auto;
+    background: none;
+    display: flex;
+    justify-content: space-between;
 }
 
-nav ul {
+/* Ensure desktop-specific overrides at 768px and above.
+   This forces a purple top nav, hides the hamburger, shows the
+   navigation as a horizontal row, and creates a 3x3, non-stretched
+   gallery of square images. */
+@media screen and (min-width: 768px) {
+    header {
+        background-color: #2D004F;
+        /* purple header */
+        padding: 1rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .album-title {
+        color: #ffffff;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+    /* Hide hamburger completely on larger screens (strong, specific overrides) */
+    #menu,
+    button#menu,
+    #menu::before,
+    #menu::after {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        pointer-events: none !important;
+        background: none !important;
+        content: none !important;
+    }
+
+    /* Navigation displayed horizontally */
+    nav {
+        display: flex !important;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        background: none !important;
+        position: static !important;
+        width: auto !important;
+        height: auto !important;
+    }
+
+    .navigation {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 1.25rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        align-items: center;
+    }
+
+    .navigation li {
+        margin: 0;
+        border: none;
+    }
+
+    .navigation a {
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        display: inline-block;
+        border-left: none;
+    }
+
+    /* Force the gallery into a 3x3 grid and keep images square (no stretching) */
+    .temple-gallery {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 2rem 0 !important;
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    figure {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        display: block;
+    }
+
+    /* Use aspect-ratio to keep a square image and object-fit to avoid stretching */
+    figure img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    figure:hover img {
+        transform: scale(1.03);
+    }
+
+    figcaption {
+        padding: 0.75rem 1rem;
+        text-align: center;
+    }
+}
+
+.navigation {
     display: flex !important;
-    /* Always visible in larger view */
     flex-direction: row;
-    justify-content: flex-end;
     align-items: center;
-    gap: 0;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-nav li {
+.navigation li {
     width: auto;
-    border-bottom: none;
+    margin: 0;
+    border: none;
 }
 
-nav a {
-    padding: 0.75rem 1.5rem;
-    border-radius: 4px;
-}
-
-nav a:hover,
-nav a:active {
-    background-color: var(--secondary-color);
-    color: var(--primary-color);
+.navigation a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+    display: block;
 }
 
 /* Main Content */
@@ -57,25 +177,48 @@ h1 {
     margin-bottom: 3rem;
 }
 
-/* Temple Gallery Grid - 3 Columns for Larger Screens */
-#temple-gallery {
-    grid-template-columns: repeat(3, 1fr);
+/* Temple Gallery Grid - 3x3 Layout */
+.temple-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
+    margin: 0 auto;
+    max-width: 1200px;
 }
 
-/* Figure Styles - Enhanced for Larger View */
+/* Figure Styles */
 figure {
-    border-radius: 12px;
+    transition: transform 0.3s ease;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 figure img {
-    height: 250px;
+    width: 100%;
+    aspect-ratio: 1 / 1;
     object-fit: cover;
+    display: block;
+}
+
+figure:hover img {
+    transform: scale(1.05);
 }
 
 figcaption {
-    font-size: 1.1rem;
-    padding: 1.25rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #333;
 }
 
 /* Footer */

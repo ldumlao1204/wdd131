@@ -1,26 +1,23 @@
-// Hamburger Menu Toggle Functionality
-const menuButton = document.getElementById('menu-button');
-const navMenu = document.getElementById('nav-menu');
+// Get the menu elements
+const menuButton = document.querySelector('#menu');
+const navigation = document.querySelector('.navigation');
 
-// Toggle menu open/closed when hamburger is clicked
+// Add click event to menu button
 menuButton.addEventListener('click', () => {
-    navMenu.classList.toggle('open');
+    // Toggle both the menu button and navigation
+    menuButton.classList.toggle('open');
+    navigation.classList.toggle('open');
 
-    // Change hamburger icon to X when open
-    if (navMenu.classList.contains('open')) {
-        menuButton.textContent = '✕';
-    } else {
-        menuButton.textContent = '☰';
-    }
+    // Update aria-expanded attribute for accessibility
+    const isExpanded = navigation.classList.contains('open');
+    menuButton.setAttribute('aria-expanded', isExpanded);
 });
 
-// Optional: Close menu when a navigation link is clicked (better UX)
-const navLinks = document.querySelectorAll('nav a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth < 768) {
-            navMenu.classList.remove('open');
-            menuButton.textContent = '☰';
-        }
-    });
+// Reset when screen gets large
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        menuButton.classList.remove('open');
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
 });

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leilany Dumlao - Temple Album</title>
-    <meta name="description" content="Picture Album | Picture Gallery of different temples around the world.">
+    <meta name="description" content="Picture Album | Picture Gallery of LDS temples in the Philippines showcasing beautiful temple architecture and sacred buildings.">
     <meta name="author" content="Leilany Dumlao">
 
+    <link rel="stylesheet" href="styles/temples-large.css" media="screen and (min-width: 768px)">
     <link rel="stylesheet" href="styles/temples.css">
-    <link rel="stylesheet" href="styles/temples-large.css"> media="screen and (min-width: 768px)">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,21 +21,23 @@
 
 <body>
     <header>
-        <h2 id="album-title">Temple Album</h2>
-        <button id="menu-button">☰</button>
+        <span class="album-title">Temple Album</span>
+        <button type="button" id="menu" aria-label="Toggle menu" aria-expanded="false">
+                 </button>
         <nav>
-            <ul id="nav-menu">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#" data-filter="old">Old</a></li>
-                <li><a href="#" data-filter="new">New</a></li>
-                <li><a href="#" data-filter="small">Small</a></li>
+            <ul class="navigation">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Old</a></li>
+                <li><a href="#">New</a></li>
+                <li><a href="#">Large</a></li>
+                <li><a href="#">Small</a></li>
             </ul>
         </nav> 
     </header>    
  
     <main>
         <h1>Home</h1>
-        <div id="temple-gallery">
+        <div class="temple-gallery">
             <figure>
                 <img src="images/alabang-ph.webp" alt="Alabang Philippines Temple"> 
                 <figcaption>Alabang Philippines Temple</figcaption>
