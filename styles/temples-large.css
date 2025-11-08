@@ -26,7 +26,7 @@ nav {
     height: auto;
     background: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 /* Ensure desktop-specific overrides at 768px and above.
@@ -35,12 +35,12 @@ nav {
    gallery of square images. */
 @media screen and (min-width: 768px) {
     header {
-        background-color: #2D004F;
+        background-color: #ee520a;
         /* purple header */
         padding: 1rem 2rem;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         position: relative;
         /* allow absolutely positioned nav to center */
     }
@@ -111,22 +111,25 @@ nav {
         font-size: 1rem;
         display: inline-block;
         border-left: none;
+        background-color: transparent !important;
     }
 
-    /* Remove any background/highlight for all menu items on desktop */
+    /* Remove any background/highlight for all menu items and states on desktop */
     .navigation a,
+    .navigation a:hover,
+    .navigation a:focus,
+    .navigation a:active,
     .navigation li {
         background: transparent !important;
+        background-color: transparent !important;
         box-shadow: none !important;
     }
 
-    /* Ensure hover does not add background color on desktop */
+    /* Ensure hover only changes opacity slightly */
     .navigation a:hover {
-        background: transparent !important;
         opacity: 0.9;
     }
 
-    /* Force the gallery into a 3x3 grid and keep images square (no stretching) */
     .temple-gallery {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
@@ -138,7 +141,6 @@ nav {
 
     figure {
         background: white;
-        border-radius: 8px;
         overflow: hidden;
         display: block;
     }
@@ -164,7 +166,7 @@ nav {
 }
 
 .navigation {
-    display: flex !important;
+    display: flex;
     flex-direction: row;
     align-items: center;
     gap: 1.5rem;
@@ -193,19 +195,14 @@ nav {
 .navigation a:hover,
 .navigation a:focus {
     background: transparent !important;
-    opacity: 0.9;
-}
 
-.navigation a.active {
-    background: transparent !important;
-    font-weight: 600;
 }
 
 /* Temple Gallery Grid - 3x3 Layout */
 .temple-gallery {
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
-    gap: 2rem;
+    gap: 5rem;
     padding: 2rem 0;
     margin: 0 auto;
     max-width: 1200px;
