@@ -1,3 +1,4 @@
+/* Tablet View - 2 Columns (768px - 1023px) */
 @media screen and (min-width: 768px) {
     header {
         padding: 1rem 2rem;
@@ -15,7 +16,6 @@
         margin-right: 0;
     }
 
-    /* Hide menu button completely on desktop */
     #menu,
     button#menu,
     #menu::before,
@@ -87,10 +87,11 @@
         border-radius: 8px;
     }
 
+    /* Temple Gallery - 2 Column Grid for Tablets */
     .temple-gallery {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
-        padding: 2rem 0;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 2rem 0 !important;
     }
 
     figure {
@@ -117,6 +118,7 @@
     }
 }
 
+/* Desktop View - 3 Columns (1024px+) */
 @media screen and (min-width: 1024px) {
     .temple-gallery {
         grid-template-columns: repeat(3, 1fr) !important;
@@ -124,6 +126,7 @@
     }
 }
 
+/* Extra Large Screens - 3 Columns with more spacing (1200px+) */
 @media screen and (min-width: 1200px) {
     header {
         padding: 1.5rem 3rem;
