@@ -65,14 +65,15 @@ nav {
 /* Menu button for small view */
 #menu {
     font-size: 1.5rem;
-    background: none;
-    border: none;
+    background-color: var(--primary-color);
+    border: 2px solid var(--nav-font-color);
     color: var(--nav-font-color);
     cursor: pointer;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     margin-left: auto;
     display: block;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    border-radius: 4px;
 }
 
 #menu::before {
