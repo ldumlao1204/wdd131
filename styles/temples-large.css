@@ -64,7 +64,7 @@
     }
 
     .navigation a {
-        color: #ffffff;
+        color: var(--nav-font-color);
         padding: 0.5rem 0.75rem;
         font-weight: 300;
         display: inline-block;
@@ -82,8 +82,8 @@
     }
 
     .navigation a:hover {
-        background-color: #B6B4FE !important;
-        color: rgb(3, 3, 197);
+        background-color: var(--secondary-color) !important;
+        color: var(--nav-hover);
         border-radius: 8px;
     }
 
@@ -95,7 +95,7 @@
     }
 
     figure {
-        background: white;
+        background: var(--nav-font-color);
         border-radius: 8px;
     }
 
