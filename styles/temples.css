@@ -67,7 +67,7 @@ nav {
     font-size: 1.5rem;
     background: none;
     border: none;
-    color: var(--font-color1);
+    color: var(--nav-font-color);
     cursor: pointer;
     padding: 1rem;
     margin-left: auto;
