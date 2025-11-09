@@ -79,6 +79,7 @@ nav {
 #menu::before {
     content: "☰";
     display: inline-block;
+    color: var(--nav-font-color);
     transition: transform 0.3s ease;
 }
 
