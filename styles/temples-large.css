@@ -15,7 +15,7 @@
         margin-right: 0;
     }
 
-
+    /* Hide menu button completely on desktop */
     #menu,
     button#menu,
     #menu::before,
@@ -87,11 +87,10 @@
         border-radius: 8px;
     }
 
-    /* Temple Gallery - 3 Column Grid */
     .temple-gallery {
-        grid-template-columns: repeat(3, 1fr) !important;
-        gap: 1.5rem !important;
-        padding: 2rem 0 !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 0;
     }
 
     figure {
@@ -118,7 +117,13 @@
     }
 }
 
-/* Extra Large Screens (1200px+) */
+@media screen and (min-width: 1024px) {
+    .temple-gallery {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
 @media screen and (min-width: 1200px) {
     header {
         padding: 1.5rem 3rem;
@@ -133,6 +138,6 @@
     }
 
     .temple-gallery {
-        gap: 3.5rem !important;
+        gap: 2.5rem !important;
     }
 }
