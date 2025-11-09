@@ -33,7 +33,7 @@ header {
 .album-title {
     font-size: 1.5rem;
     font-weight: 700;
-    margin: 0;
+    margin-left: 1rem;
     flex: 1;
 }
 
@@ -135,7 +135,7 @@ h1 {
 /* Temple figure styling */
 figure {
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -172,3 +172,5 @@ footer p {
     font-size: 1rem;
     padding: 0.25rem 0;
 }
+
+/* End of My Mobile Size Styles */
