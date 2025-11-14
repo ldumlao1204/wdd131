@@ -4,8 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W03 Learning Activity: Responsive Images</title>
+    <meta name="description" content="Picture of Philippines Urdaneta Temple">
+    <meta name="author" content="Leilany Dumlao - WDD 131, Picture of Philippines Urdaneta Temple">
+
+
 </head>
 <body>
+    <main>
+        <div class="hero">
+            <picture>
+                <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+                <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
+                <img src="images/hero-small.webp" alt="Philippines Urdaneta Temple" width="500" height="250">
+            </picture>
+        </div>
+
+    </main>
     
 </body>
 </html>
