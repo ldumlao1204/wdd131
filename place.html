@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 -Country Page - Leilany Dumlao</title>
+    <meta name="description" content="Leilany Dumlao | WDD131 - Country Page, Philippines">
+    <meta name="author" content="Leilany Dumlao">
+    <link rel="stylesheet" href="styles/place.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:ital,wght@0,700;1,700&display=swap"
+        rel="stylesheet">
+
+    <script src="scripts/place.js" defer></script>
+    <script src="scripts/getdates.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <h1>Philippines</h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-image">    
+                <picture>
+                    <source srcset="images/hero-large.jpg" media="(min-width: 768px)">
+                    <source srcset="images/hero-medium.jpg" media="(min-width: 480px)">
+                    <img src="images/hero-small.jpg" alt="Beautiful beach in the Philippines" class="hero-image">
+                </picture>
+            <div class="weather-content">
+                <section class="data">
+                    <h2>Data</h2>
+                    <p class="label-value">Label: Value</p>
+                    <p class="label-value">Label: Value</p>
+                    <p class="label-value">Label: Value</p>
+                </section>
+                <section class="weather section">
+                    <h2>Weather</h2>
+                    <img src="images/weather-icon.png" alt="Weather icon" style="width: 50px; height: 50px;">
+                    <p class="label-value">Label: Value</p>
+                    <p class="label-value">Label: Value</p>
+                    <p class="label-value">Label: Value</p>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy;<span id="currentyear"></span> &#127757; Leilany Dumlao &#127757; Philippines</p>
+        <p id="lastModified"></p>
+    </footer>
+  
+</body>
+</html>
