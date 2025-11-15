@@ -24,7 +24,7 @@ body {
 
 header {
     background-color: var(--primary-color);
-    color: white;
+    color: var(--bg-color);
     text-align: center;
     padding: 1rem;
 }
@@ -69,18 +69,21 @@ main {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Data Section */
+/* Data Section Style*/
 .data {
     background-color: var(--light-gray);
     padding: 1.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     opacity: 0.9;
-    justify-self: start;
-    align-self: start;
-    margin-left: -15rem;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .data h2 {
@@ -105,11 +108,8 @@ main {
     border-radius: 8px;
     text-align: center;
     opacity: 0.9;
-    justify-content: end;
-    align-self: end;
-    max-width: 400px;
-    margin-right: 3rem;
-    margin-bottom: 3rem;
+    max-width: 500px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .weather h2 {
@@ -120,11 +120,14 @@ main {
     font-size: 1.5rem;
     padding: 0.5rem;
     text-align: center;
+    border-radius: 4px;
 }
 
 .weather img {
     display: block;
     margin: 1rem auto;
+    width: 60px;
+    height: 60px;
 }
 
 .weather .label-value {
@@ -144,7 +147,7 @@ footer p {
     margin: 0.25rem 0;
 }
 
-/* Media Query for Larger Screens */
+/* Media Query for Larger View */
 @media (min-width: 1000px) {
     header h1 {
         font-size: 2.5rem;
@@ -178,6 +181,7 @@ footer p {
         max-width: 100%;
         margin: 0 auto;
         min-height: calc(100vh - 80px);
+        align-items: start;
     }
 
     .data {
@@ -185,6 +189,7 @@ footer p {
         align-self: start;
         max-width: 400px;
         margin-left: 3rem;
+        width: auto;
     }
 
     .weather {
@@ -194,6 +199,7 @@ footer p {
         text-align: left;
         margin-right: 3rem;
         margin-bottom: 3rem;
+        width: auto;
     }
 }
 
