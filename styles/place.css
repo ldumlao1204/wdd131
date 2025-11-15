@@ -125,8 +125,8 @@ main {
 .weather img {
     display: block;
     margin: 1rem auto;
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
 }
 
 .weather .label-value {
