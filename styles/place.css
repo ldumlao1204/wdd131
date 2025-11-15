@@ -64,15 +64,6 @@ main {
     display: block;
 }
 
-.weather-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
 /* Data Section Style*/
 .data {
     background-color: var(--light-gray);
@@ -96,7 +87,22 @@ main {
 }
 
 .label-value {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
     margin: 0.5rem 0;
+    padding-bottom: 0.3rem;
+}
+
+.label-value .label {
+    text-align: right;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.label-value .value {
+    text-align: left;
+    color: var(--text-color);
 }
 
 /* Weather Section Style */
@@ -127,10 +133,6 @@ main {
     margin: 1rem auto;
     width: 70px;
     height: 70px;
-}
-
-.weather .label-value {
-    text-align: left;
 }
 
 /* Footer Style*/
@@ -180,7 +182,7 @@ footer p {
         max-width: 100%;
         margin: 0 auto;
         min-height: calc(100vh - 80px);
-        align-items: start;
+        align-items: center;
     }
 
     .data {
