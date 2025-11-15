@@ -1,6 +1,6 @@
 :root {
     --primary-color: #0038a8;
-    --secondary-color: #ce1126;
+    --secondary-color: #dddddd;
     --accent-color: #fcd116;
     --text-color: #333;
     --bg-color: #ffffff;
@@ -68,7 +68,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem;
+    padding: 1.5rem;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -104,7 +104,7 @@ main {
 .weather {
     background-color: var(--light-gray);
     padding: 1.5rem;
-    border: 1px solid #ddd;
+    border: 1px solid var(--secondary-color);
     border-radius: 8px;
     text-align: center;
     opacity: 0.9;
@@ -126,8 +126,8 @@ main {
 .weather img {
     display: block;
     margin: 1rem auto;
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
 }
 
 .weather .label-value {
@@ -136,8 +136,8 @@ main {
 
 /* Footer Style*/
 footer {
-    background-color: var(--secondary-color);
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     text-align: center;
     padding: 1rem;
     margin-top: 0.5rem;
@@ -212,7 +212,6 @@ footer p {
 .weather img {
     display: none;
 }
-
 
 /* Medium Screen */
 @media (min-width: 500px) and (max-width: 999px) {
