@@ -219,10 +219,14 @@ footer p {
     }
 }
 
-/* Medium Screen */
+/* Medium view */
 @media (min-width: 500px) and (max-width: 999px) {
     .weather-content {
         padding: 2rem;
+    }
+
+    .hero-image img {
+        height: 400px;
     }
 
     .data,

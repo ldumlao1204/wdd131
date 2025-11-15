@@ -1,8 +1,8 @@
 // Static values for temperature and wind speed (matching the HTML)
-const temperature = 10; // in Celsius
-const windSpeed = 5; // in km/h
+const temperature = 10;   // in Celsius
+const windSpeed = 5;     // in km/h
 
-// Function to calculate wind chill
+//calculate wind chill
 function calculateWindChill(temp, wind) {
     return (
         13.12 +
