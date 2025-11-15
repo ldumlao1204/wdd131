@@ -78,7 +78,6 @@ main {
     background-color: var(--light-gray);
     padding: 1.5rem;
     border: 1px solid #ddd;
-    border-radius: 8px;
     opacity: 0.9;
     width: 100%;
     max-width: 500px;
@@ -201,16 +200,16 @@ footer p {
         margin-bottom: 3rem;
         width: auto;
     }
-}
 
-.weather h2::after {
-    content: '⛅';
-    margin-left: 0.5rem;
-    font-size: 1.2rem;
-}
+    .weather h2::after {
+        content: '⛅';
+        margin-left: 0.5rem;
+        font-size: 1.2rem;
+    }
 
-.weather img {
-    display: none;
+    .weather img {
+        display: none;
+    }
 }
 
 /* Medium Screen */
