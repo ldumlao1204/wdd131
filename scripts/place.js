@@ -1,4 +1,4 @@
-// Static values for temperature and wind speed (matching the HTML)
+// Static values for temperature and wind speed (matching the static sample in place.html
 const temperature = 10;   // in Celsius
 const windSpeed = 5;     // in km/h
 
