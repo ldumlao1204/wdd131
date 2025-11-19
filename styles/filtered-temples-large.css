@@ -1,0 +1,146 @@
+/* Tablet View - 2 Columns (768px - 1023px) */
+@media screen and (min-width: 768px) {
+    header {
+        padding: 1rem 2rem;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        flex-wrap: nowrap;
+    }
+
+    .album-title {
+        color: var(--nav-font-color);
+        margin: 0;
+        font-size: 1.6rem;
+        flex: initial;
+        margin-right: 0;
+    }
+
+    #menu,
+    button#menu,
+    #menu::before,
+    #menu::after {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        width: 0 !important;
+        height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        border: 0 !important;
+        pointer-events: none !important;
+        background: none !important;
+        content: none !important;
+    }
+
+    nav {
+        background: none !important;
+        width: auto !important;
+        height: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex: 1;
+        padding: 0;
+    }
+
+    .navigation {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-evenly !important;
+        gap: 1rem;
+        align-items: center;
+        background: none !important;
+        width: 100%;
+        max-width: 720px;
+    }
+
+    .navigation li {
+        width: auto;
+        padding: 1rem;
+        margin: 0;
+        border: none;
+        border-top: none;
+    }
+
+    .navigation a {
+        color: var(--nav-font-color);
+        padding: 0.5rem 0.75rem;
+        font-weight: 300;
+        display: inline-block;
+        text-align: left;
+    }
+
+    .navigation a,
+    .navigation a:hover,
+    .navigation a:focus,
+    .navigation a:active,
+    .navigation li {
+        background: transparent !important;
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .navigation a:hover {
+        background-color: var(--secondary-color) !important;
+        color: var(--nav-hover);
+        border-radius: 8px;
+    }
+
+    /* Temple Gallery - 2 Column Grid for Tablets */
+    .temple-gallery {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+        padding: 2rem 0 !important;
+    }
+
+    figure {
+        background: var(--nav-font-color);
+        border-radius: 8px;
+    }
+
+    figure:hover {
+        transform: translateY(-5px);
+    }
+
+    figure img {
+        aspect-ratio: 3 / 2;
+        transition: transform 0.3s ease;
+    }
+
+    figure:hover img {
+        transform: scale(1.03);
+    }
+
+    figcaption {
+        padding: 0.75rem 1rem;
+        color: var(--primary-color);
+    }
+}
+
+/* Desktop View - 3 Columns (1024px+) */
+@media screen and (min-width: 1024px) {
+    .temple-gallery {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2rem !important;
+    }
+}
+
+/* Extra Large Screens - 3 Columns with more spacing (1200px+) */
+@media screen and (min-width: 1200px) {
+    header {
+        padding: 1.5rem 3rem;
+    }
+
+    main {
+        padding: 4rem 3rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    .temple-gallery {
+        gap: 2.5rem !important;
+    }
+}
