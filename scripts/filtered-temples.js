@@ -1,3 +1,27 @@
+const menuButton = document.querySelector('#menu');
+const navigation = document.querySelector('.navigation');
+
+
+menuButton.addEventListener('click', () => {
+
+    menuButton.classList.toggle('open');
+    navigation.classList.toggle('open');
+
+
+    const isExpanded = navigation.classList.contains('open');
+    menuButton.setAttribute('aria-expanded', isExpanded);
+});
+
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768) {
+        menuButton.classList.remove('open');
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
+    }
+});
+
+
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -61,7 +85,7 @@ const temples = [
         dedicated: "1984, September, 25",
         area: 116642,
         imageUrl:
-            "https://churchofjesuschristtemples.org/assets/img/temples/manila-philippines-temple/manila-philippines-temple-48891.jpg"
+            //"https://churchofjesuschristtemples.org/assets/img/temples/manila-philippines-temple/manila-philippines-temple-48891.jpg"
     },
     // Add more temple objects here...
 ];
