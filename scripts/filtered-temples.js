@@ -3,6 +3,7 @@ const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector(".navigation");
 
 menuButton.addEventListener("click", () => {
+    
     navigation.classList.toggle("open");
     menuButton.classList.toggle("open");
 
@@ -10,7 +11,7 @@ menuButton.addEventListener("click", () => {
     menuButton.setAttribute("aria-expanded", !expanded);
 });
 
-// Temple array objects, instruction 4
+// Copied 7 Temple array objects, added 3 more -instruction 4
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -118,7 +119,7 @@ function displayTemples(filteredTemples) {
 
 displayTemples(temples);
 
-// Filtering and displaying
+// Filtering and displaying of temples
 document.querySelectorAll(".navigation a").forEach((link) => {
     link.addEventListener("click", (e) => {
         e.preventDefault();
