@@ -1,27 +1,16 @@
-const menuButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
+// Toggle mobile menu
+const menuButton = document.querySelector("#menu");
+const navigation = document.querySelector(".navigation");
 
+menuButton.addEventListener("click", () => {
+    navigation.classList.toggle("open");
+    menuButton.classList.toggle("open");
 
-menuButton.addEventListener('click', () => {
-
-    menuButton.classList.toggle('open');
-    navigation.classList.toggle('open');
-
-
-    const isExpanded = navigation.classList.contains('open');
-    menuButton.setAttribute('aria-expanded', isExpanded);
+    const expanded = menuButton.getAttribute("aria-expanded") === "true";
+    menuButton.setAttribute("aria-expanded", !expanded);
 });
 
-
-window.addEventListener('resize', () => {
-    if (window.innerWidth >= 768) {
-        menuButton.classList.remove('open');
-        navigation.classList.remove('open');
-        menuButton.setAttribute('aria-expanded', 'false');
-    }
-});
-
-
+// Temple array objects
 const temples = [
     {
         templeName: "Aba Nigeria",
@@ -79,13 +68,86 @@ const temples = [
         imageUrl:
             "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
     },
-    {    
+    {
         templeName: "Manila, Philippines",
         location: "Quezon City, Philippines",
-        dedicated: "1984, September, 25",
-        area: 116642,
+        dedicated: "1984, September, 25-27",
+        area: 26683,
         imageUrl:
-            //"https://churchofjesuschristtemples.org/assets/img/temples/manila-philippines-temple/manila-philippines-temple-48891.jpg"
+            "https://churchofjesuschristtemples.org/assets/img/temples/_temp/029-Manila-Philippines-Temple.jpg"
     },
-    // Add more temple objects here...
+    {
+        templeName: "Urdaneta City, Philippines",
+        location: "Urdaneta City, Philippines",
+        dedicated: "2024, April, 28",
+        area: 32604,
+        imageUrl:
+            "https://churchofjesuschristtemples.org/assets/img/temples/urdaneta-philippines-temple/urdaneta-philippines-temple-45874-main.jpg"
+    },
+    {
+        templeName: "Cebu City, Philippines",
+        location: "Cebu City, Philippines",
+        dedicated: "2010, June, 13",
+        area: 29556,
+        imageUrl:
+            "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
+    },
+    
 ];
+
+
+const gallery = document.querySelector(".temple-gallery");
+
+function displayTemples(filteredTemples) {
+    gallery.innerHTML = "";
+    filteredTemples.forEach((temple) => {
+        const figure = document.createElement("figure");
+
+        figure.innerHTML = `
+      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
+      <figcaption>
+        <strong>${temple.templeName}</strong><br>
+        ${temple.location}<br>
+        Dedicated: ${temple.dedicated}<br>
+        Area: ${temple.area.toLocaleString()} sq ft
+      </figcaption>
+    `;
+        gallery.appendChild(figure);
+    });
+}
+
+displayTemples(temples);
+
+// Filtering and displaying
+document.querySelectorAll(".navigation a").forEach((link) => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const filter = link.textContent.toLowerCase();
+
+        document.querySelectorAll(".navigation a").forEach(a => a.classList.remove("active"));
+        link.classList.add("active");
+
+        let filtered = temples;
+
+        switch (filter) {
+            case "old":
+                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
+                break;
+            case "new":
+                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
+                break;
+            case "large":
+                filtered = temples.filter(t => t.area > 90000);
+                break;
+            case "small":
+                filtered = temples.filter(t => t.area < 10000);
+                break;
+            case "home":
+            default:
+                filtered = temples;
+        }
+
+        displayTemples(filtered);
+        document.querySelector("h1").textContent = link.textContent;
+    });
+});
