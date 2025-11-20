@@ -3,7 +3,7 @@ const menuButton = document.querySelector("#menu");
 const navigation = document.querySelector(".navigation");
 
 menuButton.addEventListener("click", () => {
-    
+
     navigation.classList.toggle("open");
     menuButton.classList.toggle("open");
 
@@ -93,62 +93,46 @@ const temples = [
         imageUrl:
             "https://churchofjesuschristtemples.org/assets/img/temples/_temp/133-Cebu-City-Philippines-Temple.jpg"
     },
-    
+
 ];
 
 
-const gallery = document.querySelector(".temple-gallery");
+createTempleCard(temples);
 
-function displayTemples(filteredTemples) {
-    gallery.innerHTML = "";
-    filteredTemples.forEach((temple) => {
-        const figure = document.createElement("figure");
+const oldLink = document.querySelector("#old");
 
-        figure.innerHTML = `
-      <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
-      <figcaption>
-        <strong>${temple.templeName}</strong><br>
-        Location: ${temple.location}<br>
-        Dedicated: ${temple.dedicated}<br>
-        Size: ${temple.area.toLocaleString()} sq ft
-      </figcaption>
-    `;
-        gallery.appendChild(figure);
+oldLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.location.includes("Old")));
+});    
+
+function createTempleCard() {
+    document.querySelector("temple-gallery").innerHTML = "";
+
+    temples.forEach(temple => {
+        let card = document.createElement("section");
+        let name = document.createElement("h3");
+        let location = document.createElement("p");
+        let dedication = document.createElement("p");
+        let area = document.createElement("p");
+        let img = document.createElement("img");
+
+        name.textContent = temple.templeName;
+        location.innerHTML =`<span class="label">Location:</span> ${temple.location}`;
+        dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
+        area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
+        img.setAttribute("src", temple.imageUrl);
+        img.setAttribute("alt", `${temple.templeName} Temple`);
+        img.setAttribute("loading", "lazy");
+
+        card.appendChild(name);
+        card.appendChild(location);
+        card.appendChild(dedication);
+        card.appendChild(area);
+        card.appendChild(img);
+
+        document.querySelector("temple-gallery").appendChild(card);
+
+
     });
+
 }
-
-displayTemples(temples);
-
-// Filtering and displaying of temples
-document.querySelectorAll(".navigation a").forEach((link) => {
-    link.addEventListener("click", (e) => {
-        e.preventDefault();
-        const filter = link.textContent.toLowerCase();
-
-        document.querySelectorAll(".navigation a").forEach(a => a.classList.remove("active"));
-        link.classList.add("active");
-
-        let filtered = temples;
-
-        switch (filter) {
-            case "old":
-                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() < 1900);
-                break;
-            case "new":
-                filtered = temples.filter(t => new Date(t.dedicated).getFullYear() > 2000);
-                break;
-            case "large":
-                filtered = temples.filter(t => t.area > 90000);
-                break;
-            case "small":
-                filtered = temples.filter(t => t.area < 10000);
-                break;
-            case "home":
-            default:
-                filtered = temples;
-        }
-
-        displayTemples(filtered);
-        document.querySelector("h1").textContent = link.textContent;
-    });
-});
