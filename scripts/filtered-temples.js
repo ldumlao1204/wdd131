@@ -10,7 +10,7 @@ menuButton.addEventListener("click", () => {
     menuButton.setAttribute("aria-expanded", !expanded);
 });
 
-// Temple array objects
+// Temple array objects, instruction 4
 const temples = [
     {
         templeName: "Aba Nigeria",
