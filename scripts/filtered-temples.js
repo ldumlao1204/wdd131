@@ -108,9 +108,9 @@ function displayTemples(filteredTemples) {
       <img src="${temple.imageUrl}" alt="${temple.templeName}" loading="lazy">
       <figcaption>
         <strong>${temple.templeName}</strong><br>
-        ${temple.location}<br>
+        Location: ${temple.location}<br>
         Dedicated: ${temple.dedicated}<br>
-        Area: ${temple.area.toLocaleString()} sq ft
+        Size: ${temple.area.toLocaleString()} sq ft
       </figcaption>
     `;
         gallery.appendChild(figure);
