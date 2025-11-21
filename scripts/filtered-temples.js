@@ -97,42 +97,75 @@ const temples = [
 ];
 
 
-createTempleCard(temples);
+//function to create temple cards
+function createTempleCard(filteredTemples) {
+    document.querySelector(".temple-gallery").innerHTML = "";
 
-const oldLink = document.querySelector("#old");
-
-oldLink.addEventListener("click", () => {
-    createTempleCard(temples.filter(temple => temple.location.includes("Old")));
-});    
-
-function createTempleCard() {
-    document.querySelector("temple-gallery").innerHTML = "";
-
-    temples.forEach(temple => {
-        let card = document.createElement("section");
-        let name = document.createElement("h3");
-        let location = document.createElement("p");
-        let dedication = document.createElement("p");
-        let area = document.createElement("p");
+    filteredTemples.forEach(temple => {
+        let card = document.createElement("figure");
         let img = document.createElement("img");
+        let figcaption = document.createElement("figcaption");
 
-        name.textContent = temple.templeName;
-        location.innerHTML =`<span class="label">Location:</span> ${temple.location}`;
-        dedication.innerHTML = `<span class="label">Dedicated:</span> ${temple.dedicated}`;
-        area.innerHTML = `<span class="label">Size:</span> ${temple.area} sq ft`;
         img.setAttribute("src", temple.imageUrl);
         img.setAttribute("alt", `${temple.templeName} Temple`);
         img.setAttribute("loading", "lazy");
 
-        card.appendChild(name);
-        card.appendChild(location);
-        card.appendChild(dedication);
-        card.appendChild(area);
+        figcaption.innerHTML = `
+            <h3>${temple.templeName}</h3>
+            <p><span class="label">Location:</span> ${temple.location}</p>
+            <p><span class="label">Dedicated:</span> ${temple.dedicated}</p>
+            <p><span class="label">Size:</span> ${temple.area} sq ft</p>
+        `;
+
         card.appendChild(img);
+        card.appendChild(figcaption);
 
-        document.querySelector("temple-gallery").appendChild(card);
-
-
+        document.querySelector(".temple-gallery").appendChild(card);
     });
-
 }
+
+// Display all temples on page load
+createTempleCard(temples);
+
+// Get navigation links
+const homeLink = document.querySelector(".navigation li:nth-child(1) a");
+const oldLink = document.querySelector(".navigation li:nth-child(2) a");
+const newLink = document.querySelector(".navigation li:nth-child(3) a");
+const largeLink = document.querySelector(".navigation li:nth-child(4) a");
+const smallLink = document.querySelector(".navigation li:nth-child(5) a");
+
+// Home - Display all temples
+homeLink.addEventListener("click", () => {
+    createTempleCard(temples);
+    document.querySelector("h1").textContent = "Home";
+});
+
+// Old - Temples built before 1900
+oldLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => {
+        const year = parseInt(temple.dedicated.split(",")[0]);
+        return year < 1900;
+    }));
+    document.querySelector("h1").textContent = "Old";
+});
+
+// New - Temples built after 2000
+newLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => {
+        const year = parseInt(temple.dedicated.split(",")[0]);
+        return year > 2000;
+    }));
+    document.querySelector("h1").textContent = "New";
+});
+
+// Large - Temples larger than 90,000 square feet
+largeLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area > 90000));
+    document.querySelector("h1").textContent = "Large";
+});
+
+// Small - Temples smaller than 10,000 square feet
+smallLink.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area < 10000));
+    document.querySelector("h1").textContent = "Small";
+});
