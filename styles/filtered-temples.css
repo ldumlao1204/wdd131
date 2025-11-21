@@ -160,6 +160,14 @@ figcaption {
     color: var(--font-color2);
 }
 
+.label {
+    font-weight: 600;
+    color:#011846;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+
+}
+
 /* Footer Styling */
 footer {
     background-color: var(--primary-color);
