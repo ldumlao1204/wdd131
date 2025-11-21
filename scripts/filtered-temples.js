@@ -124,10 +124,9 @@ function createTempleCard(filteredTemples) {
     });
 }
 
-// Display all temples on page load
 createTempleCard(temples);
 
-// Get navigation links
+// Get nav links
 const homeLink = document.querySelector(".navigation li:nth-child(1) a");
 const oldLink = document.querySelector(".navigation li:nth-child(2) a");
 const newLink = document.querySelector(".navigation li:nth-child(3) a");
@@ -158,13 +157,13 @@ newLink.addEventListener("click", () => {
     document.querySelector("h1").textContent = "New";
 });
 
-// Large - Temples larger than 90,000 square feet
+// Large - Temples >90k square feet
 largeLink.addEventListener("click", () => {
     createTempleCard(temples.filter(temple => temple.area > 90000));
     document.querySelector("h1").textContent = "Large";
 });
 
-// Small - Temples smaller than 10,000 square feet
+// Small - Temples <10k square feet
 smallLink.addEventListener("click", () => {
     createTempleCard(temples.filter(temple => temple.area < 10000));
     document.querySelector("h1").textContent = "Small";
