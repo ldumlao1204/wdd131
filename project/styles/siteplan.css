@@ -1,0 +1,67 @@
+/* Reset and base styles */
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #dfd8d8;
+    color: #333;
+    line-height: 1.6;
+}
+
+header,
+footer {
+    background-color: #9e1a34;
+    color: #f7f7f7;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: #9e1a34;
+}
+
+section {
+    margin-bottom: 2rem;
+}
+
+figure {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+figure img {
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.wireframe {
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.wireframe img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+    font-size: 0.9rem;
+    margin: 0;
+}
