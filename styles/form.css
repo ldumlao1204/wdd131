@@ -1,6 +1,6 @@
 :root {
     --primary-color: #291dd3;
-    --secondary-color: #eff3f8;
+    --secondary-color: #ccd9e9;
     --accent-color: #e2e0e0;
     --font-color: #f8f9fa;
     --font-color1: #000000;
@@ -23,15 +23,18 @@ body {
     padding: 20px;
 }
 
+/* Header */
+header {
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
 /* Headings */
 h1 {
     text-align: center;
     color: var(--font-color);
     background-color: var(--primary-color);
     padding: 20px;
-    margin: 0 auto 20px;
-    max-width: 600px;
-   
 }
 
 /* Form Container */
@@ -39,17 +42,10 @@ form {
     max-width: 600px;
     margin: 0 auto;
     background: var(--secondary-color);
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
 }
 
-/* Labels */
-label {
-    display: block;
-    margin-top: 1rem;
-    font-weight: bold;
-    color: var(--font-color1);
-}
 /* Fieldset styling */
 fieldset {
     border: none;
@@ -63,15 +59,22 @@ legend {
     margin-bottom: 0.5rem;
 }
 
-.apply-text {
-    font-style: italic;
-    font-weight: normal;
+/* Labels */
+label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: var(--font-color1);
 }
-
 
 .optional {
     font-weight: normal;
-    color: var(--primary-color);
+    color: var(--font-color2);
+}
+
+.apply-text {
+    font-style: italic;
+    font-weight: normal;
 }
 
 /* Inputs, Select, Textarea */
@@ -80,23 +83,27 @@ input[type="date"],
 select,
 textarea {
     width: 100%;
-    max-width: 500px;
-    padding: .75rem;
+    padding: 10px;
     margin-top: 5px;
     border: 1px solid var(--secondary-color);
     border-radius: 4px;
     font-size: 1rem;
-    font-family: "lato";
     background-color: var(--font-color);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Stars container */
 .stars {
     display: flex;
-    gap: .15rem;
+    gap: 5px;
     align-items: flex-end;
     justify-content: space-around;
+    margin-top: 0.5rem;
+}
+
+.star-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .stars input[type="radio"] {
@@ -111,9 +118,7 @@ textarea {
     font-size: 0.9em;
     color: var(--font-color1);
     cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-top: 0;
 }
 
 .stars input[type="radio"]:checked+label {
@@ -128,37 +133,29 @@ textarea {
     gap: 5px;
 }
 
+.checkbox-item {
+    display: flex;
+    align-items: center;
+}
+
 .checkbox-group input[type="checkbox"] {
     margin-right: 8px;
     width: 18px;
     height: 18px;
-    vertical-align: middle;
+    cursor: pointer;
 }
 
 .checkbox-group label {
-    display: inline;
     font-weight: normal;
     margin-top: 0;
     margin-bottom: 0;
-}
-
-.apply-text {
-    font-style: italic;
-    font-weight: normal;
-}
-
-.checkbox-group input[type="checkbox"] {
-    margin-right: 8px;
-    width: 18px;
-    height: 18px;
-    vertical-align: middle;
+    cursor: pointer;
 }
 
 /* Submit Button */
 input[type="submit"] {
     display: block;
     width: 100%;
-    max-width: 500px;
     padding: 12px;
     margin-top: 20px;
     background-color: var(--accent-color);
@@ -169,7 +166,6 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input[type="submit"]:hover {
@@ -185,14 +181,13 @@ footer {
     color: var(--font-color);
     background-color: var(--primary-color);
     padding: 10px;
-   
 }
 
 footer p {
     margin: 5px 0;
 }
 
-/* Review page */
+/* Review page specific styles */
 .review-page h1 {
     background-color: transparent;
     color: var(--font-color1);
@@ -207,13 +202,19 @@ footer p {
 }
 
 .review-page footer {
-    margin-top: 400px;
-    
+    margin-top: 40px;
 }
 
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablet View - Medium screens */
 @media screen and (min-width: 768px) {
     body {
         padding: 30px;
+    }
+
+    header {
+        max-width: 700px;
     }
 
     h1 {
@@ -239,6 +240,14 @@ footer p {
         width: 18px;
         height: 18px;
     }
+
+    footer {
+        max-width: 700px;
+    }
+
+    .review-page p {
+        max-width: 700px;
+    }
 }
 
 /* Large Desktop View - Large screens */
@@ -247,10 +256,13 @@ footer p {
         padding: 40px;
     }
 
+    header {
+        max-width: 800px;
+    }
+
     h1 {
         font-size: 2.5em;
         padding: 30px;
-        max-width: 800px;
     }
 
     form {
@@ -308,12 +320,19 @@ footer p {
         max-width: 800px;
         font-size: 0.9em;
     }
+
+    .review-page p {
+        max-width: 800px;
+    }
 }
 
 /* Extra Large Desktop View - Very large screens */
 @media screen and (min-width: 1440px) {
-    h1 {
+    header {
         max-width: 900px;
+    }
+
+    h1 {
         font-size: 3em;
     }
 
@@ -325,5 +344,9 @@ footer p {
     footer {
         max-width: 900px;
         font-size: 1em;
+    }
+
+    .review-page p {
+        max-width: 900px;
     }
 }
