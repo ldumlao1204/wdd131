@@ -49,8 +49,25 @@ label {
     margin-top: 1rem;
     font-weight: bold;
     color: var(--font-color1);
-   
 }
+/* Fieldset styling */
+fieldset {
+    border: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--font-color1);
+    margin-bottom: 0.5rem;
+}
+
+.apply-text {
+    font-style: italic;
+    font-weight: normal;
+}
+
 
 .optional {
     font-weight: normal;
@@ -106,13 +123,23 @@ textarea {
 /* Checkbox group */
 .checkbox-group {
     margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin-right: 8px;
+    width: 18px;
+    height: 18px;
+    vertical-align: middle;
 }
 
 .checkbox-group label {
-    display: block;
+    display: inline;
     font-weight: normal;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .apply-text {
