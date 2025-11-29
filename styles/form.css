@@ -1,6 +1,6 @@
 :root {
     --primary-color: #291dd3;
-    --secondary-color: #ccd9e9;
+    --secondary-color: #d9e2ee;
     --accent-color: #e2e0e0;
     --font-color: #f8f9fa;
     --font-color1: #000000;
@@ -89,6 +89,7 @@ textarea {
     border-radius: 4px;
     font-size: 1rem;
     background-color: var(--font-color);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Stars container */
@@ -166,6 +167,7 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 input[type="submit"]:hover {
