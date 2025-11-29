@@ -1,7 +1,10 @@
 :root {
     --primary-color: #291dd3;
-    --secondary-color: #0911FB;
-    --accent-color: #f8f9fa;
+    --secondary-color: #ccd9e9;
+    --accent-color: #e2e0e0;
+    --font-color: #f8f9fa;
+    --font-color1: #000000;
+    --font-color2: #0911FB;
     --heading-font: "Roboto", sans-serif;
     --body-font: "Lato", sans-serif;
 }
@@ -15,7 +18,7 @@
 body {
     font-family: Lato, sans-serif;
     line-height: 1.6;
-    background-color: #c9c3c3;
+    background-color: var(--accent-color);
     color: #333;
     padding: 20px;
 }
@@ -23,7 +26,7 @@ body {
 /* Headings */
 h1 {
     text-align: center;
-    color: white;
+    color: var(--font-color);
     background-color: var(--primary-color);
     padding: 20px;
     margin: 0 auto 20px;
@@ -35,9 +38,9 @@ h1 {
 form {
     max-width: 600px;
     margin: 0 auto;
-    background: #c9c3c3;
+    background: var(--secondary-color);
     padding: 25px;
-    border-radius: 0 0 10px 10px;
+    border-radius: 8px;
 }
 
 /* Labels */
@@ -45,13 +48,13 @@ label {
     display: block;
     margin-top: 10px;
     font-weight: bold;
-    color: #000;
+    color: var(--font-color1);
     font-size: 1em;
 }
 
 .optional {
     font-weight: normal;
-    color: #0911FB;
+    color: var(--font-color2);
 }
 
 /* Inputs, Select, Textarea */
@@ -62,10 +65,10 @@ textarea {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
-    border: 1px solid #999;
+    border: 1px solid var(--secondary-color);
     border-radius: 4px;
     font-size: 1.1em;
-    background-color: white;
+    background-color: var(--font-color);
 }
 
 /* Stars container */
@@ -88,7 +91,7 @@ textarea {
 
 .stars label {
     font-size: 0.9em;
-    color: #333;
+    color: var(--font-color1);
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -96,7 +99,7 @@ textarea {
 }
 
 .stars input[type="radio"]:checked+label {
-    color: #f39c12;
+    color: var(--primary-color);
 }
 
 /* Checkbox group */
@@ -124,9 +127,9 @@ input[type="submit"] {
     width: 100%;
     padding: 12px;
     margin-top: 20px;
-    background-color: #c9c3c3;
-    color: #000;
-    border: 2px solid #666;
+    background-color: var(--accent-color);
+    color: var(--font-color1);
+    border: 2px solid var(--font-color1);
     border-radius: 6px;
     font-size: 1.1em;
     font-weight: bold;
@@ -144,7 +147,7 @@ footer {
     margin: 10px auto 0;
     text-align: center;
     font-size: 0.85em;
-    color: white;
+    color: var(--font-color);
     background-color: var(--primary-color);
     padding: 10px;
    
