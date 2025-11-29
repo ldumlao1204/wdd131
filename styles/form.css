@@ -210,3 +210,120 @@ footer p {
     margin-top: 400px;
     /* Adjust this value to move footer further down */
 }
+
+media screen and (min-width: 768px) {
+    body {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2em;
+        padding: 25px;
+    }
+
+    form {
+        max-width: 700px;
+        padding: 30px;
+    }
+
+    /* Stars - larger spacing on tablet */
+    .stars {
+        gap: 10px;
+    }
+
+    .stars label {
+        font-size: 1.1em;
+    }
+
+    .stars input[type="radio"] {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Large Desktop View - Large screens */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 40px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+        padding: 30px;
+        max-width: 800px;
+    }
+
+    form {
+        max-width: 800px;
+        padding: 40px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Larger input fields */
+    input[type="text"],
+    input[type="date"],
+    select,
+    textarea {
+        font-size: 1.1rem;
+        padding: 12px;
+    }
+
+    /* Stars - even larger on desktop */
+    .stars {
+        gap: 15px;
+    }
+
+    .stars label {
+        font-size: 1.3em;
+    }
+
+    .stars input[type="radio"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Checkbox adjustments */
+    .checkbox-group input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkbox-group label {
+        font-size: 1.05rem;
+    }
+
+    /* Submit button */
+    input[type="submit"] {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    input[type="submit"]:hover {
+        transform: scale(1.02);
+        transition: all 0.3s ease;
+    }
+
+    /* Footer */
+    footer {
+        max-width: 800px;
+        font-size: 0.9em;
+    }
+}
+
+/* Extra Large Desktop View - Very large screens */
+@media screen and (min-width: 1440px) {
+    h1 {
+        max-width: 900px;
+        font-size: 3em;
+    }
+
+    form {
+        max-width: 900px;
+        padding: 50px;
+    }
+
+    footer {
+        max-width: 900px;
+        font-size: 1em;
+    }
+}
