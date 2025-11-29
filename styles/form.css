@@ -114,11 +114,20 @@ textarea {
     margin-bottom: 5px;
 }
 
+.apply-text {
+    font-style: italic;
+    font-weight: normal;
+}
+
 .checkbox-group input[type="checkbox"] {
     margin-right: 8px;
     width: 18px;
     height: 18px;
     vertical-align: middle;
+}
+
+.apply-text label{
+    font-style: italic;
 }
 
 /* Submit Button */
