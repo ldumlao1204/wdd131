@@ -2,6 +2,7 @@
     --primary-color: #291dd3;
     --secondary-color: #ecedf4;
     --accent-color: #e2e0e0;
+    --accent-color1: #b0b1ba;
     --font-color: #f8f9fa;
     --font-color1: #000000;
     --font-color2: #0911FB;
@@ -19,7 +20,7 @@ body {
     font-family: "Lato", sans-serif;
     line-height: 1.6;
     background-color: var(--accent-color);
-    color: #333;
+    color: var(--font-color1);
     padding: 20px;
 }
 
@@ -87,7 +88,7 @@ textarea {
     margin-top: 5px;
     border: 1px solid var(--secondary-color);
     border-radius: 4px;
-    font-size: 1rem;
+    font-size: 1.1rem;
     background-color: var(--font-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -171,7 +172,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #b3adad;
+    background-color: #b0b1ba;
 }
 
 /* Footer */
@@ -209,7 +210,7 @@ footer p {
 
 /* ========== MEDIA QUERIES ========== */
 
-/* Tablet View - Medium screens */
+/* Medium screens view */
 @media screen and (min-width: 768px) {
     body {
         padding: 30px;
@@ -229,7 +230,7 @@ footer p {
         padding: 30px;
     }
 
-    /* Stars - larger spacing on tablet */
+    /* Stars - medium view screen */
     .stars {
         gap: 10px;
     }
@@ -252,7 +253,7 @@ footer p {
     }
 }
 
-/* Large Desktop View - Large screens */
+/* Large screen view */
 @media screen and (min-width: 1024px) {
     body {
         padding: 40px;
@@ -282,7 +283,7 @@ footer p {
         padding: 12px;
     }
 
-    /* Stars - even larger on desktop */
+    /* Stars - large view*/
     .stars {
         gap: 15px;
     }
@@ -328,7 +329,7 @@ footer p {
     }
 }
 
-/* Extra Large Desktop View - Very large screens */
+/* Very large screen view */
 @media screen and (min-width: 1440px) {
     header {
         max-width: 900px;
