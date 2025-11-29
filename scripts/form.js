@@ -28,7 +28,7 @@ const products = [
 ];
 
 
-// Populate Product Select
+// Populate Product Selection
 document.addEventListener("DOMContentLoaded", () => {
     const productSelect = document.getElementById("product");
     if (productSelect) {
