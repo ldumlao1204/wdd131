@@ -1,6 +1,6 @@
 :root {
     --primary-color: #291dd3;
-    --secondary-color: #ccd9e9;
+    --secondary-color: #eff3f8;
     --accent-color: #e2e0e0;
     --font-color: #f8f9fa;
     --font-color1: #000000;
@@ -54,7 +54,7 @@ label {
 
 .optional {
     font-weight: normal;
-    color: var(--font-color2);
+    color: var(--primary-color);
 }
 
 /* Inputs, Select, Textarea */
@@ -124,10 +124,6 @@ textarea {
     width: 18px;
     height: 18px;
     vertical-align: middle;
-}
-
-.apply-text label{
-    font-style: italic;
 }
 
 /* Submit Button */
