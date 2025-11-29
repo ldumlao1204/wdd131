@@ -34,8 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (productSelect) {
         products.forEach(product => {
             const option = document.createElement("option");
-            option.value = product.id; // value is product id
-            option.textContent = product.name; // display is product name
+            option.value = product.id; 
+            option.textContent = product.name; 
             productSelect.appendChild(option);
         });
     }
@@ -47,11 +47,11 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("reviewCount", count);
 
         // Display counter
-        const counterDiv = document.createElement("div");
-        counterDiv.style.marginTop = "20px";
-        counterDiv.style.fontWeight = "bold";
-        counterDiv.textContent = `You have submitted ${count} review(s).`;
-        document.body.appendChild(counterDiv);
+        const footer = document.querySelector("footer");
+        const counterP = document.createElement("p");
+        counterP.style.fontWeight = "bold";
+        counterP.textContent = `You have submitted ${count} review(s).`;
+        footer.appendChild(counterP);;
     }
 });
 
