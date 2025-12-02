@@ -22,7 +22,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--heading);
     font-weight: 700;
 }
 
@@ -44,27 +44,28 @@ header img {
 
 /* Hamburger Menu Button */
 #menu {
-    font-size: 1.5rem;
-    background-color: var(--primary-color);
+    background: none;
+    border: none;
     color: var(--nav-color);
     cursor: pointer;
     padding: 0.5rem 1rem;
-    margin-left: auto;
-    display: block;
-    transition: all 0.3s ease;
-    border-radius: 4px;
+    font-size: 1.8rem;
 }
 
 #menu::before {
     content: "☰";
-    display: inline-block;
-    color: var(--nav-color);
-    transition: transform 0.3s ease;
 }
 
 #menu.open::before {
-    content: "X";
-    font-family: var(--body-font), sans-serif;
+    content: "✖";
+}
+
+#menu::before {
+    content: "☰";
+}
+
+#menu.open::before {
+    content: "✖";
 }
 
 nav {
@@ -79,17 +80,8 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #f39c12;
-}
-
-nav a:active {
-    color: #f39c12;
-}
-
-/* Main Content */
-main {
-    min-height: calc(100vh - 200px);
+nav a:hover, nav a:active {
+    color: var(--nav-color);
 }
 
 /* Hero Section */
@@ -167,71 +159,68 @@ footer {
 }
 
 /* Responsive Design */
+/* Mobile */
 @media (max-width: 768px) {
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
 
+    /* Place burger on the left */
     #menu {
-        display: block;
         position: absolute;
         left: 1rem;
         top: 50%;
         transform: translateY(-50%);
+        z-index: 2;
+        /* ensure above nav */
     }
 
-    header img {
-        margin: 0 auto;
-    }
-
-    nav {
+    /* Hide nav until opened */
+    .navigation {
         display: none;
-        flex-direction: column;
+        position: relative;
         width: 100%;
-        gap: 0;
-        margin-top: 1rem;
+        flex-direction: column;
+        background: var(--primary-color);
+        margin-top: 3.5rem;
+        /* room for header/burger */
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    nav.open {
+    .navigation.open {
         display: flex;
     }
 
-    nav a {
+    .navigation a {
         padding: 1rem;
-        
+        text-align: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
+}
 
-    .hero-content h1 {
-        font-size: 2rem;
-    }
+/* Hero, etc. (kept minimal for test) */
+.home-hero {
+    min-height: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    .hero-content p {
-        font-size: 1rem;
-    }
+.home-hero img {
+    width: 100%;
+    display: block;
+}
 
-    .mission {
-        padding: 2rem 1rem;
-    }
+.hero-content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--primary-color);
+    text-shadow: 2px 2px 8px #9c9797b3;
+    text-align: center;
+}
 
-    .mission h2 {
-        font-size: 1.5rem;
-    }
-
-    .mission p {
-        font-size: 1rem;
-    }
-    }
-
-    @media (max-width: 480px) {
-        .hero-content h1 {
-            font-size: 1.5rem;
-        }
-
-        .hero-content p {
-            font-size: 0.9rem;
-        }
-    }
-
-    
+.hero-content h1 {
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 2rem;
+}

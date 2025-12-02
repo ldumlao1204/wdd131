@@ -1,7 +1,11 @@
 const hamButton = document.querySelector('#menu');
 const navigation = document.querySelector('.navigation');
 
-hamButton.addEventListener('click', () => {
-    navigation.classList.toggle('open');
-    hamButton.classList.toggle('open');
-});
+if (hamButton && navigation) {
+    hamButton.addEventListener('click', () => {
+        const nowOpen = !navigation.classList.contains('open');
+        navigation.classList.toggle('open', nowOpen);
+        hamButton.classList.toggle('open', nowOpen);
+        hamButton.setAttribute('aria-expanded', String(nowOpen));
+    });
+}
