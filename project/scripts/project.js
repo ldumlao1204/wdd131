@@ -1,15 +1,7 @@
-<script>
-    const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    
-    hamburger.addEventListener('click', () => {
-        nav.classList.toggle('active');
-    });
+const hamButton = document.querySelector('#menu');
+const navigation = document.querySelector('.navigation');
 
-    // Close menu when clicking a link
-    document.querySelectorAll('nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            nav.classList.remove('active');
-        });
-    });
-</script>
+hamButton.addEventListener('click', () => {
+    navigation.classList.toggle('open');
+    hamButton.classList.toggle('open');
+});
