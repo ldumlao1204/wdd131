@@ -24,7 +24,17 @@ body {
     color: var(--font-color2);
 }
 
-h1,
+h1 {
+    font-family: var(--heading);
+    font-weight: 700;
+    font-size: 5rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
 h2 {
     font-family: var(--heading);
     font-weight: 700;
@@ -51,7 +61,6 @@ header img {
     background: none;
     border: none;
     color: var(--font-color1);
-    /* use white for contrast on header */
     cursor: pointer;
     padding: 0.5rem 1rem;
     font-size: 1.8rem;
@@ -68,7 +77,7 @@ header img {
 }
 
 /* Screen reader only text */
-.sr-only {
+.ham-menu {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -95,23 +104,24 @@ nav a:hover,
 nav a:active {
     color: var(--nav-color);
 }
+/* Home Page Styles - My index.html */
 
 /* Hero Section */
 .home-hero {
     position: relative;
-    display: flex;
-    justify-content: center;
+    display: flex;    
     align-items: center;
-    min-height: 500px;
+    min-height: 220px;
     overflow: hidden;
 }
 
 .home-hero img {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     margin: 0 auto;
-}
+    object-fit: cover;
+ }
 
 .hero-content {
     position: absolute;
@@ -126,7 +136,7 @@ nav a:active {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -191,7 +201,6 @@ footer {
         flex-direction: column;
         background: var(--primary-color);
         margin-top: 3.5rem;
-        /* room for header/burger */
         border-top: 1px solid rgba(255, 255, 255, 0.2);
     }
 
@@ -208,7 +217,7 @@ footer {
 
 /* Hero, etc. (kept minimal for test) */
 .home-hero {
-    min-height: 300px;
+    min-height: 220px;
     position: relative;
     display: flex;
     justify-content: center;
