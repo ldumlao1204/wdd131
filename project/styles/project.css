@@ -56,6 +56,7 @@ header img {
     display: block;
 }
 
+
 /* Hamburger Menu Button */
 #menu {
     background: none;
@@ -104,12 +105,13 @@ nav a:hover,
 nav a:active {
     color: var(--nav-color);
 }
+
 /* Home Page Styles - My index.html */
 
 /* Hero Section */
 .home-hero {
     position: relative;
-    display: flex;    
+    display: flex;
     align-items: center;
     min-height: 220px;
     overflow: hidden;
@@ -121,7 +123,7 @@ nav a:active {
     display: block;
     margin: 0 auto;
     object-fit: cover;
- }
+}
 
 .hero-content {
     position: absolute;
@@ -146,6 +148,39 @@ nav a:active {
     font-weight: 400;
 }
 
+.scenario-section {
+    background: var(--background-color);
+    padding: 2.5rem 1rem;
+}
+
+.container {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+#scenario-title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    padding: 1rem;
+    color: var(--primary-color);
+}
+
+.section-intro {
+    margin: 1rem;
+    color: var(--font-color2);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    padding: 1em 2rem;
+
+
+}
+
 /* Mission Section */
 .mission {
     max-width: 1200px;
@@ -155,7 +190,7 @@ nav a:active {
 
 .mission h2 {
     color: var(--primary-color);
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 1rem;
     margin-top: 2rem;
 }
@@ -165,7 +200,7 @@ nav a:active {
 }
 
 .mission p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.2;
     text-align: justify;
     margin-bottom: 1.5rem;
@@ -175,9 +210,31 @@ nav a:active {
 footer {
     background-color: var(--primary-color);
     color: #fff;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* container will provide padding so background can be full-bleed */
+    margin-top: 5px;
+    /* remove gap so footer touches adjacent content/page edge */
+   
+   
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Keep footer content aligned with the site's main container */
+footer .container {
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    /* same inner padding as header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsive Design */
