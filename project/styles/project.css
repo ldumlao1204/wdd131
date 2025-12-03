@@ -40,6 +40,11 @@ h2 {
     font-weight: 700;
 }
 
+/* Center all section headings */
+h2 {
+    text-align: center;
+}
+
 /* Header Styles */
 header {
     background-color: var(--primary-color);
@@ -148,16 +153,139 @@ nav a:active {
     font-weight: 400;
 }
 
+.info-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
 
+/* Center headings and CTA buttons inside main content blocks */
+.info-section,
+.info-cards,
+.cards,
+.mission-section {
+    text-align: center;
+}
 
+p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
 
+.cta button {
+    background-color: var(--primary-color);
+    color: var(--font-color1);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.cta p {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 2rem;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.2;
+}
 
 
 /* Mission Section */
 .mission {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 3rem 2rem;
+}
+
+/* Info / Card Blocks */
+.info-cards,
+.cards {
+    background: var(--background-color);
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
+    padding: 1.5rem;
+    margin: 1.5rem 2rem;
+    color: var(-);
+}
+
+.info-cards h2,
+.cards h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+}
+
+.info-cards p,
+.cards p {
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+/* CTA button used in cards */
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--font-color1);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.15s ease, transform 0.08s ease;
+    vertical-align: middle;
+}
+
+.cta-button:hover {
+    background: var(--nav-color);
+    color: var(--primary-color);
+    transform: translateY(-1px);
+}
+
+/* Mission specific layout */
+.mission-section {
+    padding: 2rem 1rem;
+    background: transparent;
+}
+
+.mission-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.mission-text {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.mission-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+@media (min-width: 769px) {
+    .mission-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .info-cards,
+    .cards {
+        margin: 2rem auto;
+        max-width: 72rem;
+    }
 }
 
 .mission h2 {
@@ -182,16 +310,11 @@ nav a:active {
 footer {
     background-color: var(--primary-color);
     color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px;
-    /* container will provide padding so background can be full-bleed */
-    margin-top: 5px;
-    /* remove gap so footer touches adjacent content/page edge */
-   
-   
+    width: 100%;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* move padding into .container so background is full-bleed */
 }
 
 footer p {
