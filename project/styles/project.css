@@ -1,8 +1,11 @@
 :root {
-    --primary-color: #9e1a34; /* Darkred */
-    --secondary-color: #dfd8d8; /* light gray */
-    --font-color1: #f7f7f7fc; /* white */
-    --font-color2:#161515fc;
+    --primary-color: #9e1a34;
+    /* Darkred */
+    --secondary-color: #dfd8d8;
+    /* light gray */
+    --font-color1: #f7f7f7fc;
+    /* white */
+    --font-color2: #161515fc;
     --nav-color: #f39c12;
     --background-color: #ffe4c4;
     --heading: "Roboto", sans-serif;
@@ -18,10 +21,11 @@
 body {
     font-family: 'Lato', sans-serif;
     line-height: 1.3;
-    color:var(--font-color2);
+    color: var(--font-color2);
 }
 
-h1, h2 {
+h1,
+h2 {
     font-family: var(--heading);
     font-weight: 700;
 }
@@ -46,26 +50,33 @@ header img {
 #menu {
     background: none;
     border: none;
-    color: var(--nav-color);
+    color: var(--font-color1);
+    /* use white for contrast on header */
     cursor: pointer;
     padding: 0.5rem 1rem;
     font-size: 1.8rem;
 }
 
+/* Default icon */
 #menu::before {
     content: "☰";
 }
 
+/* Icon when open */
 #menu.open::before {
     content: "✖";
 }
 
-#menu::before {
-    content: "☰";
-}
-
-#menu.open::before {
-    content: "✖";
+/* Screen reader only text */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
 
 nav {
@@ -80,7 +91,8 @@ nav a {
     transition: color 0.3s ease;
 }
 
-nav a:hover, nav a:active {
+nav a:hover,
+nav a:active {
     color: var(--nav-color);
 }
 
@@ -162,13 +174,14 @@ footer {
 /* Mobile */
 @media (max-width: 768px) {
 
-    /* Place burger on the left */
+    /* Place burger on the right */
     #menu {
         position: absolute;
-        left: 1rem;
+        right: 1rem;
+        left: auto;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 2;
+        z-index: 999;
         /* ensure above nav */
     }
 

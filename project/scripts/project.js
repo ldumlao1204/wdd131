@@ -1,11 +1,19 @@
-const hamButton = document.querySelector('#menu');
-const navigation = document.querySelector('.navigation');
+document.addEventListener("DOMContentLoaded", () => {
+    const menuButton = document.querySelector("#menu");
+    const nav = document.querySelector("#primary-navigation");
 
-if (hamButton && navigation) {
-    hamButton.addEventListener('click', () => {
-        const nowOpen = !navigation.classList.contains('open');
-        navigation.classList.toggle('open', nowOpen);
-        hamButton.classList.toggle('open', nowOpen);
-        hamButton.setAttribute('aria-expanded', String(nowOpen));
+    menuButton.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("open");
+        menuButton.classList.toggle("open", isOpen);
+        menuButton.setAttribute("aria-expanded", isOpen);
     });
-}
+
+    // Close mobile nav when resizing to desktop widths
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            nav.classList.remove('open');
+            menuButton.classList.remove('open');
+            menuButton.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
