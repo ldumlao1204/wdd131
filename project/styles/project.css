@@ -7,6 +7,7 @@
     /* white */
     --font-color2: #161515fc;
     --nav-color: #f39c12;
+    --accent-color: #f1ced5;
     --background-color: #ffe4c4;
     --heading: "Roboto", sans-serif;
     --body-font: "Lato", sans-serif;
@@ -206,7 +207,7 @@ p {
 /* Info / Card Blocks */
 .info-cards,
 .cards {
-    background: var(--background-color);
+    background: var(--accent-color);
     border-radius: 8px;
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
     padding: 1.5rem;
@@ -255,6 +256,8 @@ p {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
+    background-color: var(--accent-color);
+    padding: 10px;
 }
 
 .mission-grid {
@@ -267,6 +270,7 @@ p {
 .mission-text {
     font-size: 1rem;
     line-height: 1.6;
+    text-align: center;
 }
 
 .mission-image img {
