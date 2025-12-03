@@ -199,7 +199,7 @@ p {
 
 /* Mission Section */
 .mission {
-    max-width: 800px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 3rem 2rem;
 }
@@ -263,12 +263,12 @@ p {
 .mission-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
     align-items: center;
 }
 
 .mission-text {
-    font-size: 1rem;
+    font-size: 2.5rem;
     line-height: 1.6;
     text-align: center;
 }
@@ -304,7 +304,7 @@ p {
 }
 
 .mission p {
-    font-size: 1rem;
+    font-size: 2rem;
     line-height: 1.2;
     text-align: justify;
     margin-bottom: 1.5rem;

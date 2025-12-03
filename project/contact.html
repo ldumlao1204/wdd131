@@ -31,9 +31,47 @@
 
     <main>
         <section class="mission">
-            <h1>Contact Us</h1>
+            <h1>Heart Warrior Philippines</h1>
             <p>Please contact Heart Warrior Philippines via our social pages for more information.</p>
         </section>
+
+        <section class="contact-form">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-row">
+                    <label for="name">First Name</label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Last Name</label>
+                    <input type="text" id="name" name="name" required>   
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="yourname@example.com" required>
+                </div>
+                <div class="form-row">
+                    <label>Message Purpose</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="purpose" id="general" required> General
+                            Inquiry</label>
+                        <label><input type="radio" name="purpose" id="reservation"> Reservation Question</label>
+                        <label><input type="radio" name="purpose" id="suggestion"> Website Suggestion</label>
+                    </div>
+                </div>
+                <div class="form-row message-row">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Type here" required></textarea>
+                </div>
+                <div class="form-row checkbox-row">
+                    <label>
+                        <input type="checkbox" name="subscribe">
+                        Please Subscribe me to the monthly newsletter
+                    </label>
+                </div>
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">Get in Touch!</button>
+                </div>
+            </form>
+
     </main>
 
     <footer>
