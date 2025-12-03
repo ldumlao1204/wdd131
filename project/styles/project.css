@@ -102,7 +102,7 @@ nav a:active {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 350px;
+    min-height: 500px;
     overflow: hidden;
 }
 
@@ -171,18 +171,16 @@ footer {
 }
 
 /* Responsive Design */
-/* Mobile */
+/* Mobile View */
 @media (max-width: 768px) {
 
-    /* Place burger on the right */
     #menu {
-        position: absolute;
-        right: 1rem;
+        position: fixed;
+        right: 2rem;
         left: auto;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 1.5rem;
+        transform: none;
         z-index: 999;
-        /* ensure above nav */
     }
 
     /* Hide nav until opened */
@@ -236,4 +234,34 @@ footer {
     font-family: var(--heading);
     font-weight: 700;
     font-size: 2rem;
+}
+
+/* Desktop / Large screens */
+@media (min-width: 769px) {
+
+    /* Hide hamburger button on desktop */
+    #menu {
+        display: none;
+    }
+
+    /* Display navigation normally on desktop */
+    .navigation {
+        display: flex !important;
+        position: static;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        margin-top: 0;
+        border-top: none;
+    }
+
+    .navigation a {
+        padding: 0.5rem 1rem;
+        border-top: none;
+        text-align: left;
+    }
+
+    header {
+        flex-wrap: nowrap;
+    }
 }
