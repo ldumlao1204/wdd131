@@ -148,39 +148,10 @@ nav a:active {
     font-weight: 400;
 }
 
-.scenario-section {
-    background: var(--background-color);
-    padding: 2.5rem 1rem;
-}
-
-.container {
-    max-width: 72rem;
-    margin: 0 auto;
-}
-
-#scenario-title {
-    font-size: 1.75rem;
-    line-height: 1.2;
-    margin: 0 0 0.5rem;
-    padding: 1rem;
-    color: var(--primary-color);
-}
-
-.section-intro {
-    margin: 1rem;
-    background-color: var(--primary-color);
-    color: var(--font-color2);
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    margin: 2rem 0;
-    padding: 1em 2rem;
 
 
-}
+
+
 
 /* Mission Section */
 .mission {
