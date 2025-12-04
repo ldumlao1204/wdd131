@@ -46,6 +46,48 @@ h2 {
     text-align: center;
 }
 
+/* Large-screen H1 sizing: use 4rem on large viewports */
+@media (min-width: 769px) {
+    h1 {
+        font-size: 4rem;
+        /* desktop h1 size */
+    }
+}
+
+/* Utility: full-bleed backgrounds that keep inner content centered */
+.full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-sizing: border-box;
+}
+
+/* Apply full-bleed background to card and contact sections */
+.info-cards,
+.contact-form,
+.cards {
+    background: var(--accent-color);
+}
+
+/* Make the visible colored band full width while keeping content centered */
+.info-cards,
+.contact-form {
+    padding: 1.5rem 0;
+    /* vertical padding for the band */
+}
+
+.info-cards>.about-container,
+.cards>.about-container,
+.contact-form>form,
+.contact-form>.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
 /* Header Styles */
 header {
     background-color: var(--primary-color);
