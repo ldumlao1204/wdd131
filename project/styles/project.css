@@ -280,6 +280,45 @@ p {
     border-radius: 8px;
 }
 
+
+/* ABOUT US PAGE */
+
+
+
+.hero img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
+h1,
+h2 {
+    font-family: var(--body-font);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    display: block;
+    object-position: center;
+}
+
+/* End About Us Page */
+
 @media (min-width: 769px) {
     .mission-grid {
         grid-template-columns: 1fr 1fr;
@@ -318,7 +357,6 @@ footer {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* move padding into .container so background is full-bleed */
 }
 
 footer p {
@@ -335,6 +373,8 @@ footer .container {
     align-items: center;
     justify-content: center;
 }
+
+/* End Footer */
 
 /* Responsive Design */
 /* Mobile View */
@@ -399,6 +439,62 @@ footer .container {
     font-family: var(--heading);
     font-weight: 700;
     font-size: 2rem;
+}
+
+/* About page hero (smaller hero with H1 overlay) */
+.about-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+    /* slightly smaller hero */
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.about-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.95) contrast(0.95);
+}
+
+.about-hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--font-color1);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.about-hero .hero-content h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* About content container (limit width to 800px) */
+.about-container {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 1rem 1rem;
+}
+
+/* Ensure info-cards used on about page keep same look and centered layout */
+.about-container.info-cards {
+    padding: 1.25rem;
+}
+
+@media (max-width: 480px) {
+    .about-hero {
+        min-height: 160px;
+    }
+
+    .about-hero .hero-content h1 {
+        font-size: 1.4rem;
+    }
 }
 
 /* Desktop / Large screens */
