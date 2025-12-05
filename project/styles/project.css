@@ -394,7 +394,7 @@ h1 {
 }
 
 .employee-profiles {
-    background: var(--background-color);
+    background: var(--secondary-color);
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     padding: 24px;
     border-radius: 4px;
