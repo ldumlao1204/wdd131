@@ -13,7 +13,8 @@ h1 {
 /* Slightly smaller hero on large view to match requested adjustment */
 .home-hero,
 .about-hero {
-    min-height: 180px;
+    min-height: 140px;
+    /* reduced further so hero band is smaller on large screens */
 }
 
 /* Increase H2 size to match home page prominence */
@@ -24,6 +25,12 @@ h2 {
 /* Ensure home hero H1 stays vertically centered on small but on large we can nudge it upward slightly */
 .home-hero .hero-content {
     top: 40%;
+}
+
+/* Make hero H1 on large screens match the large page H1 (contact) */
+.home-hero .hero-content h1,
+.about-hero .hero-content h1 {
+    font-size: var(--h1-large);
 }
 
 /* Contact page: reduce mission paragraph prominence on large if needed */

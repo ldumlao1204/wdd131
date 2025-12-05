@@ -174,7 +174,8 @@ nav a:active {
 }
 
 .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
+    /* match global h1 on small view so home/about match contact */
     margin-bottom: 1rem;
     font-weight: 700;
 }
