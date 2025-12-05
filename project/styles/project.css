@@ -6,9 +6,9 @@
     --font-color1: #f7f7f7fc;
     /* white */
     --font-color2: #161515fc;
-    /* black */
-    --nav-color: #f39c12;
-    /* orange */
+    /* grayish black */
+    --nav-color: #000000;
+    /* black*/
     --accent-color: #f1ced5;
     /* light peach */
     --background-color: #ffe4c4;
@@ -23,7 +23,7 @@
 }
 
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: var(--body-font);
     line-height: 1.3;
     color: var(--font-color2);
 }
@@ -32,11 +32,9 @@ h1 {
     font-family: var(--heading);
     font-weight: 700;
     font-size: 2.2rem;
-    /* mobile default */
     text-align: center;
-    text-transform: uppercase;
-    color: var(--font-color1);
-    margin: 20px 0;
+    color: var(--font-color2);
+    margin: 30px 0;
     padding: 10px 0;
 }
 
@@ -83,7 +81,10 @@ header {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    margin-bottom: 4px;
 }
 
 header img {
@@ -175,7 +176,6 @@ nav a:active {
 
 .hero-content h1 {
     font-size: 2.2rem;
-    /* match global h1 on small view so home/about match contact */
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -185,8 +185,13 @@ nav a:active {
 
     /* ensure hero heading is centered vertically on small devices */
     .home-hero .hero-content {
-        top: 50%;
+        top: 70%;
         transform: translate(-50%, -50%);
+    }
+
+    /* Reduce home page h1 to fit in small-screen hero */
+    .home-page .home-hero .hero-content h1 {
+        font-size: 1.6rem;
     }
 
     /* slightly smaller h2 on small screens */
@@ -292,8 +297,8 @@ p {
 }
 
 .cta-button:hover {
-    background: var(--nav-color);
-    color: var(--primary-color);
+    background: var(--font-color2);
+    color: var(--font-color1);
     transform: translateY(-1px);
 }
 
@@ -314,7 +319,7 @@ p {
 .mission-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 1rem;
     align-items: center;
     margin: 10px
 }
@@ -345,7 +350,7 @@ p {
     height: auto;
     object-fit: cover;
     display: block;
-    object-position: center;
+    object-position: 75% 25%;
 }
 
 h1,
@@ -356,14 +361,13 @@ h2 {
 }
 
 h1 {
-    font-size: 5rem;
-    background-color: var(--secondary-color);
-    padding: 50px 0;
+    font-size: inherit;
+    padding: 0;
     height: auto;
     display: block;
-    opacity: 0.8;
+    opacity: 1;
     object-position: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .hero-content h1 {
@@ -383,6 +387,19 @@ h1 {
     .cards {
         margin: 2rem auto;
         max-width: 72rem;
+    }
+}
+
+/* Small-view explicit overrides: ensure h1 is smaller and has no background */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+        background: none !important;
+        padding: 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
     }
 }
 
@@ -553,14 +570,106 @@ h1 {
 }
 
 .submit-btn:hover {
-    background: #7a1426;
-    transform: translateY(-2px);
-    color: #f39c12
+    background: var(--font-color2);
+    color: var(--font-color1);
+    transform: translateY(-1px);
 }
 
 .submit-btn:active {
     transform: translateY(0);
 }
+
+/* Article Page Styles */
+
+.site-header {
+    background: #c62828;
+    color: #fff;
+    padding: 1rem;
+}
+
+.site-header h1 {
+    margin: 0;
+}
+
+.site-header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.site-header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.site-header nav a:hover {
+    text-decoration: underline;
+}
+
+.article-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 2rem auto;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+article {
+    flex: 3;
+    background: var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.article-header h2 {
+    margin-top: 0;
+}
+
+.meta {
+    font-size: 0.9rem;
+    color: var(--font-color2);
+}
+
+.article-body img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+/* Sidebar */
+.sidebar {
+    flex: 1;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #c62828;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+
 
 
 /* Footer */
@@ -662,7 +771,6 @@ footer .container {
     align-items: center;
     justify-content: center;
     min-height: 220px;
-    /* slightly smaller hero */
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
