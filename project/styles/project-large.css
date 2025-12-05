@@ -52,11 +52,6 @@ h2 {
     font-size: 1.05rem;
 }
 
-/* Prevent sticky header from overlapping article content on large screens */
-.article-container {
-    padding-top: var(--header-offset);
-}
-
 /* Make article hero headings use the large h1 size */
 .article-header h1 {
     font-size: calc(var(--h1-large, 5rem) * 0.6);

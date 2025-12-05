@@ -45,4 +45,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
     }
+
+    // Compute header height and set CSS variable so layouts account for sticky header
+    function updateHeaderOffset() {
+        const header = document.querySelector('header');
+        if (!header) return;
+        const height = Math.ceil(header.getBoundingClientRect().height);
+        // add a small buffer so content isn't flush against the header
+        const buffer = 12;
+        document.documentElement.style.setProperty('--header-offset', `${height + buffer}px`);
+    }
+
+    // initialize and update on resize (throttled)
+    updateHeaderOffset();
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            updateHeaderOffset();
+        }, 120);
+    });
 });
