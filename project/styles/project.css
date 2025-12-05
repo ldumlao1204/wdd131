@@ -1,10 +1,16 @@
 :root {
-    --primary-color: #9e1a34; /* Darkred */
-    --secondary-color: #e8e8e8; /* light gray */
-    --font-color1: #f7f7f7fc; /* white */
-    --font-color2: #161515fc; /* black */
-    --nav-color: #f39c12; /* orange */
-    --accent-color: #f1ced5; /* light peach */
+    --primary-color: #9e1a34;
+    /* Darkred */
+    --secondary-color: #e8e8e8;
+    /* light gray */
+    --font-color1: #f7f7f7fc;
+    /* white */
+    --font-color2: #161515fc;
+    /* black */
+    --nav-color: #f39c12;
+    /* orange */
+    --accent-color: #f1ced5;
+    /* light peach */
     --background-color: #ffe4c4;
     --heading: "Roboto", sans-serif;
     --body-font: "Lato", sans-serif;
@@ -25,7 +31,8 @@ body {
 h1 {
     font-family: var(--heading);
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 2.2rem;
+    /* mobile default */
     text-align: center;
     text-transform: uppercase;
     color: var(--font-color1);
@@ -43,13 +50,7 @@ h2 {
     text-align: center;
 }
 
-/* Large-screen H1 sizing: use 4rem on large viewports */
-@media (min-width: 769px) {
-    h1 {
-        font-size: 4rem;
-        /* desktop h1 size */
-    }
-}
+/* Desktop overrides are loaded from project-large.css */
 /* Apply full-bleed background to card and contact sections */
 .info-cards,
 .contact-form,
@@ -173,9 +174,29 @@ nav a:active {
 }
 
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 2.6rem;
     margin-bottom: 1rem;
     font-weight: 700;
+}
+
+/* Small-screen adjustments */
+@media (max-width: 768px) {
+
+    /* ensure hero heading is centered vertically on small devices */
+    .home-hero .hero-content {
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* slightly smaller h2 on small screens */
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    /* make mission paragraph on contact page smaller for mobile */
+    .contact-page .mission p {
+        font-size: 0.95rem;
+    }
 }
 
 .hero-content p {
