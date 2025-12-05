@@ -12,8 +12,14 @@
     --accent-color: #f1ced5;
     /* light peach */
     --background-color: #ffe4c4;
+    --header-offset: 120px;
     --heading: "Roboto", sans-serif;
     --body-font: "Lato", sans-serif;
+}
+
+/* Ensure the browser accounts for the sticky header when scrolling to anchors */
+html {
+    scroll-padding-top: var(--header-offset);
 }
 
 * {
@@ -214,6 +220,43 @@ nav a:active {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 2rem;
+}
+
+/* Article page: base, mobile-friendly styles */
+.article-container {
+    max-width: 900px;
+    margin: 1.5rem auto;
+    padding: 1rem;
+    padding-top: calc(1rem + var(--header-offset));
+}
+
+.article-header h1 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    text-align: center;
+    scroll-margin-top: calc(var(--header-offset) + 0.5rem);
+}
+
+.article-body img {
+    display: block;
+    margin: 1rem auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 0.5rem 0;
 }
 
 /* Center headings and CTA buttons inside main content blocks */
@@ -582,13 +625,14 @@ h1 {
 /* Article Page Styles */
 
 .site-header {
-    background: #c62828;
-    color: #fff;
+    background: var(--secondary-color);
+    color: var(--secondary-color);
     padding: 1rem;
 }
 
 .site-header h1 {
     margin: 0;
+
 }
 
 .site-header nav ul {
@@ -599,7 +643,7 @@ h1 {
 }
 
 .site-header nav a {
-    color: #fff;
+    color: var(--font-color2);
     text-decoration: none;
 }
 
@@ -627,24 +671,21 @@ article {
     margin-top: 0;
 }
 
-.meta {
-    font-size: 0.9rem;
-    color: var(--font-color2);
-}
-
 .article-body img {
     max-width: 100%;
     border-radius: 6px;
     margin: 1rem 0;
+    border: 1px solid var(--font-color2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 /* Sidebar */
 .sidebar {
     flex: 1;
-    background: #fff;
+    background: var(--secondary-color);
     padding: 1rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
 }
 
 .sidebar h3 {
@@ -662,11 +703,12 @@ article {
 
 .sidebar a {
     text-decoration: none;
-    color: #c62828;
+    color: var(--font-color2);
 }
 
 .sidebar a:hover {
     text-decoration: underline;
+    color: var(--primary-color)
 }
 
 
