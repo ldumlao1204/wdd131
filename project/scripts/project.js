@@ -65,4 +65,69 @@ document.addEventListener("DOMContentLoaded", () => {
             updateHeaderOffset();
         }, 120);
     });
+
+    // Form Handling and localStorage
+
+    // 1. SELECT THE FORM (DOM Manipulation)
+    const contactForm = document.getElementById('contact-form');
+
+    // Check if the form element exists (Conditional Branching)
+    if (contactForm) {
+
+        // 2. FORM SUBMISSION HANDLER (JavaScript Function)
+        contactForm.addEventListener('submit', function (event) {
+            // Collect the data and save to localStorage, then allow the form to submit
+
+            // Get all form elements
+            const formElements = Array.from(contactForm.elements);
+
+            const formData = formElements.reduce((data, element) => {
+                if (!element.name) return data;
+
+                if (element.type === 'radio') {
+                    if (element.checked) data[element.name] = element.value;
+                } else if (element.type === 'checkbox') {
+                    data[element.name] = element.checked;
+                } else if (element.type !== 'submit' && element.type !== 'button') {
+                    data[element.name] = element.value;
+                }
+                return data;
+            }, {});
+
+            // Save the form data to localStorage so thank-you page can use it
+            try {
+                localStorage.setItem('hw_user_data', JSON.stringify(formData));
+                console.info('Contact form data saved to localStorage.');
+            } catch (err) {
+                console.warn('Could not save form data to localStorage:', err);
+            }
+
+        });
+    }
+    // Check if we are on the thank-you page (Conditional Branching)
+    if (document.body.classList.contains('thank-you-page')) {
+
+        // 1. RETRIEVE DATA FROM LOCAL STORAGE (JavaScript localStorage)
+        const storedData = localStorage.getItem('hw_user_data');
+        const userData = storedData ? JSON.parse(storedData) : null;
+        const messageElement = document.getElementById('welcome-message');
+
+        if (userData && messageElement) {
+          
+            let purposeLabel = 'your message';
+            if (userData.purpose === 'membership') {
+                purposeLabel = 'your Membership Question';
+            } else if (userData.purpose === 'suggestion') {
+                purposeLabel = 'your Website Suggestion';
+            } else if (userData.purpose === 'general') {
+                purposeLabel = 'your General Inquiry';
+            }
+
+            const first = userData.firstName || userData['first-name'] || '';
+            const personalizedMessage = `✅ Thank you, ${first}! We have received ${purposeLabel}.`;
+            messageElement.textContent = personalizedMessage;
+            localStorage.removeItem('hw_user_data');
+        }
+    }
+
 });

@@ -563,6 +563,15 @@ h1 {
     min-height: 120px;
 }
 
+/* Add breathing room between message textarea and the subscribe checkbox */
+.message-row {
+    margin-bottom: 0.5rem;
+}
+
+.checkbox-row {
+    margin-top: 0.6rem;
+}
+
 /* Radio group styling */
 .radio-group {
     display: flex;
@@ -911,4 +920,36 @@ footer .container {
     .radio-group {
         gap: 0.5rem;
     }
+}
+
+/* Thank-you page styling */
+.thank-you-main {
+    max-width: 820px;
+    margin: calc(var(--header-offset) + 1rem) auto 2rem auto;
+    padding: 1rem;
+}
+
+.thank-you-card {
+    background: var(--accent-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.thank-you-card h2 {
+    margin-top: 0;
+    color: var(--primary-color);
+    font-size: 2rem;
+}
+
+.thank-you-card p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin: 0.75rem 0;
+}
+
+.thank-you-card .cta-button {
+    display: inline-block;
+    margin-top: 0.75rem;
 }

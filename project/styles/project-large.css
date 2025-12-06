@@ -14,7 +14,6 @@ h1 {
 .home-hero,
 .about-hero {
     min-height: 140px;
-    /* reduced further so hero band is smaller on large screens */
 }
 
 /* Increase H2 size to match home page prominence */
