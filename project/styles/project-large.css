@@ -1,5 +1,4 @@
-/* Large-screen overrides for project styles */
-/* Loaded only on viewports >= 769px via media link in HTML */
+/* Large-screen for size 769px */
 
 :root {
     --h1-large: 5rem;
@@ -30,7 +29,7 @@ h2 {
     font-size: 2rem;
 }
 
-/* Make hero H1 on large screens */
+/* Make hero h1 on large view */
 .home-hero .hero-content h1,
 .about-hero .hero-content h1 {
     font-size: var(--h1-large);
@@ -41,14 +40,14 @@ h2 {
     font-size: 1.2rem;
 }
 
-/* Keep info-cards and contact form content centered */
+/* contact form content centered */
 .info-cards.about-container,
 .cards.about-container {
     max-width: 800px;
     margin: 2rem auto;
 }
 
-/* Make CTA larger on large screens */
+/* Make CTA larger on large view */
 .cta-button,
 .submit-btn {
     padding: 0.9rem 1.8rem;
