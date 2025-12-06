@@ -36,21 +36,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // run once on load and when history changes
-    setActiveNavLink();
-    window.addEventListener('popstate', setActiveNavLink);
+    try {
+        setActiveNavLink();
+        window.addEventListener('popstate', setActiveNavLink);
+    } catch (err) {
+        // Defensive: if something goes wrong, log but don't break the page
+        console.warn('setActiveNavLink error', err);
+    }
 
-    menuButton.addEventListener("click", () => {
-        const isOpen = nav.classList.toggle("open");
-        menuButton.classList.toggle("open", isOpen);
-        menuButton.setAttribute("aria-expanded", isOpen);
-    });
+    // Only attach menu listeners if the button and nav exist
+    if (menuButton) {
+        menuButton.addEventListener("click", () => {
+            // nav may be null on pages without a header nav
+            if (!nav) return;
+            const isOpen = nav.classList.toggle("open");
+            menuButton.classList.toggle("open", isOpen);
+            menuButton.setAttribute("aria-expanded", isOpen);
+        });
+    } else {
+        console.debug('Menu button not found; skipping mobile menu listener.');
+    }
 
     // Close mobile nav when resizing to desktop widths
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
-            nav.classList.remove('open');
-            menuButton.classList.remove('open');
-            menuButton.setAttribute('aria-expanded', 'false');
+            if (nav && nav.classList) nav.classList.remove('open');
+            if (menuButton && menuButton.classList) {
+                menuButton.classList.remove('open');
+                menuButton.setAttribute('aria-expanded', 'false');
+            }
         }
     });
 
