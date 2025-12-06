@@ -2,6 +2,43 @@ document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.querySelector("#menu");
     const nav = document.querySelector("#primary-navigation");
 
+    // Highlight active nav link based on current page
+    function setActiveNavLink() {
+        if (!nav) return;
+        const links = Array.from(nav.querySelectorAll('a'));
+        // Determine current page file name (ignore query/hash), fallback to index.html
+        let currentPath = window.location.pathname || '';
+        // In some local file setups pathname may be a full path; keep last segment
+        let currentFile = currentPath.split('/').pop() || '';
+        if (!currentFile || currentFile === '') currentFile = 'index.html';
+        currentFile = currentFile.toLowerCase();
+
+        links.forEach(a => {
+            // Use the link's href resolved against the document location to normalize
+            let linkUrl;
+            try {
+                linkUrl = new URL(a.getAttribute('href'), window.location.href);
+            } catch (e) {
+                // fallback: use raw href
+                linkUrl = { pathname: a.getAttribute('href') };
+            }
+            const linkFile = (linkUrl.pathname || '').split('/').pop() || 'index.html';
+            const linkNorm = linkFile.toLowerCase();
+
+            if (linkNorm === currentFile) {
+                a.classList.add('active');
+                a.setAttribute('aria-current', 'page');
+            } else {
+                a.classList.remove('active');
+                a.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    // run once on load and when history changes
+    setActiveNavLink();
+    window.addEventListener('popstate', setActiveNavLink);
+
     menuButton.addEventListener("click", () => {
         const isOpen = nav.classList.toggle("open");
         menuButton.classList.toggle("open", isOpen);
@@ -113,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const messageElement = document.getElementById('welcome-message');
 
         if (userData && messageElement) {
-          
+
             let purposeLabel = 'your message';
             if (userData.purpose === 'membership') {
                 purposeLabel = 'your Membership Question';

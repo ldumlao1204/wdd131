@@ -13,7 +13,7 @@ h1 {
 /* Slightly smaller hero on large view to match requested adjustment */
 .home-hero,
 .about-hero {
-    min-height: 140px;
+    min-height: 110px;
 }
 
 /* Increase H2 size to match home page prominence */

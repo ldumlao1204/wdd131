@@ -149,6 +149,31 @@ nav a:active {
     text-decoration: underline;
 }
 
+.navigation a.active,
+.navigation a[aria-current="page"] {
+    background: var(--font-color1);
+    color: var(--primary-color);
+    padding: 0.6rem 0.9rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.05rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    border-bottom: 3px solid var(--accent-color);
+}
+
+.navigation a.active:hover,
+.navigation a[aria-current="page"]:hover {
+    background: var(--font-color1);
+    color: var(--primary-color);
+}
+
+/* Focus outline for keyboard users */
+.navigation a:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.08);
+    outline-offset: 2px;
+}
+
 /* Home Page Styles - My index.html */
 
 /* Hero Section */
@@ -156,7 +181,7 @@ nav a:active {
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 220px;
+    min-height: 160px;
     overflow: hidden;
 }
 
@@ -226,7 +251,6 @@ nav a:active {
 .article-container {
     max-width: 900px;
     margin: 1.5rem auto;
-    /* use the runtime header offset so the top of the main content sits below the sticky header */
     padding: 1rem;
     padding-top: var(--header-offset);
 }
@@ -244,7 +268,6 @@ nav a:active {
     margin: 1rem auto;
     width: 100%;
     max-width: 720px;
-    /* keep large images readable and centered */
     height: auto;
 }
 
@@ -335,6 +358,9 @@ p {
     background: var(--primary-color);
     color: var(--font-color1);
     padding: 0.6rem 1rem;
+    min-width: 200px;
+    /* ensure consistent button lengths */
+    text-align: center;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 700;
@@ -824,7 +850,7 @@ footer .container {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 220px;
+    min-height: 160px;
     overflow: hidden;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
