@@ -39,7 +39,7 @@ body {
 h1 {
     font-family: var(--heading);
     font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 3rem;
     text-align: center;
     color: var(--font-color2);
     margin: 30px 0;
@@ -209,14 +209,14 @@ nav a:active {
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: 400;
     margin: 0;
     color: var(--secondary-color);
 }
 
 .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 5rem;
     margin-bottom: 1rem;
     font-weight: 700;
 }
@@ -226,28 +226,28 @@ nav a:active {
 
     /* ensure hero heading is centered vertically on small devices */
     .home-hero .hero-content {
-        top: 70%;
+        top: 50%;
         transform: translate(-50%, -50%);
     }
 
     /* Reduce home page h1 to fit in small-screen hero */
     .home-page .home-hero .hero-content h1 {
-        font-size: 1.6rem;
+        font-size: 2.5rem;
     }
 
     /* slightly smaller h2 on small screens */
     h2 {
-        font-size: 1.6rem;
+        font-size: 1.5em;
     }
 
     /* make mission paragraph on contact page smaller for mobile */
     .contact-page .mission p {
-        font-size: 0.95rem;
+        font-size: 1.5rem;
     }
 }
 
 .hero-content p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -331,7 +331,6 @@ p {
     color: var(--font-color1);
     padding: 0.6rem 1rem;
     min-width: 200px;
-    /* ensure consistent button lengths */
     text-align: center;
     border-radius: 6px;
     text-decoration: none;
@@ -353,7 +352,7 @@ p {
 }
 
 .mission-section h2 {
-    font-size: 3rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     color: var(--primary-color);
     background-color: var(--accent-color);
@@ -369,7 +368,7 @@ p {
 }
 
 .mission-text {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     line-height: 1.6;
     text-align: center;
 }
@@ -475,6 +474,12 @@ h1 {
     text-align: center;
 }
 
+.employee-profiles h2 {
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    font-size: 1.8em
+}
+
 .profiles {
     display: flex;
     justify-content: center;
@@ -516,16 +521,14 @@ h1 {
 
 .contact-form h2 {
     margin-bottom: 1.5rem;
-    font-size: 1.75rem;
+    font-size: 1.8rem;
 }
 
 /* Contact Information Band */
 
 .contact-info {
     padding: 0.5rem 1rem;
-    /* tighten vertical band */
     margin-top: 0.25rem;
-    /* bring contact info closer to the H1 above */
 }
 
 .contact-info>h2 {
@@ -539,14 +542,12 @@ h1 {
     margin: 0.25rem auto 0.5rem auto;
     padding: 0;
     display: block;
-    /* vertical list */
 }
 
 .contact-info .info-list li {
     padding: 0.12rem 0;
-    /* reduced vertical padding */
     color: var(--font-color2);
-    font-size: 1rem;
+    font-size: 1.1rem;
     display: block;
     text-align: left;
 }
@@ -900,7 +901,7 @@ footer .container {
 .hero-content h1 {
     font-family: var(--heading);
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 /* About page hero (smaller hero with H1 overlay) */
@@ -933,7 +934,7 @@ footer .container {
 }
 
 .about-hero .hero-content h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0;
 }
 
@@ -955,7 +956,7 @@ footer .container {
     }
 
     .about-hero .hero-content h1 {
-        font-size: 1.4rem;
+        font-size: 3rem;
     }
 }
 

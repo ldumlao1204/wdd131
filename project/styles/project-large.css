@@ -18,12 +18,16 @@ h1 {
 
 /* Increase H2 size to match home page  */
 h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 /* hero H1 stays vertically centered on small */
 .home-hero .hero-content {
-    top: 40%;
+    top: 50%;
+}
+
+.home-hero .hero-content p{
+    font-size: 2rem;
 }
 
 /* Make hero H1 on large screens */
@@ -34,7 +38,7 @@ h2 {
 
 /* Contact page: reduce paragraph size on large view */
 .contact-page .mission p {
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Keep info-cards and contact form content centered */
@@ -53,5 +57,5 @@ h2 {
 
 /* Article hero headings use large h1 size */
 .article-header h1 {
-    font-size: calc(var(--h1-large, 5rem) * 0.6);
+    font-size: calc(var(--h1-large, 4rem) * 0.6);
 }
