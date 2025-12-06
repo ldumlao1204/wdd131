@@ -11,6 +11,7 @@
     /* black*/
     --accent-color: #f1ced5;
     /* light peach */
+    --li-color: #0303a0da; /* blue link color */
     --background-color: #ffe4c4;
     --header-offset: 120px;
     --heading: "Roboto", sans-serif;
@@ -738,7 +739,7 @@ article {
 
 .sidebar a:hover {
     text-decoration: underline;
-    color: var(--primary-color)
+    color: var(--li-color);
 }
 
 
