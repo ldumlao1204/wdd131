@@ -11,7 +11,8 @@
     /* black*/
     --accent-color: #f1ced5;
     /* light peach */
-    --li-color: #0303a0da; /* blue link color */
+    --li-color: #0303a0da;
+    /* blue link color */
     --background-color: #ffe4c4;
     --header-offset: 120px;
     --heading: "Roboto", sans-serif;
@@ -297,7 +298,7 @@ p {
 .mission {
     max-width: 500px;
     margin: 0 auto;
-    padding: 3rem 2rem;
+    padding: 0 2rem;
 }
 
 /* Info / Card Blocks */
@@ -516,6 +517,71 @@ h1 {
 .contact-form h2 {
     margin-bottom: 1.5rem;
     font-size: 1.75rem;
+}
+
+/* Contact Information Band */
+
+.contact-info {
+    padding: 0.5rem 1rem;
+    /* tighten vertical band */
+    margin-top: 0.25rem;
+    /* bring contact info closer to the H1 above */
+}
+
+.contact-info>h2 {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.contact-info .info-list {
+    list-style: none;
+    max-width: 800px;
+    margin: 0.25rem auto 0.5rem auto;
+    padding: 0;
+    display: block;
+    /* vertical list */
+}
+
+.contact-info .info-list li {
+    padding: 0.12rem 0;
+    /* reduced vertical padding */
+    color: var(--font-color2);
+    font-size: 1rem;
+    display: block;
+    text-align: left;
+}
+
+/* Center only the FB page line (first list item) */
+.contact-info .info-list li:first-child {
+    text-align: center;
+}
+
+.contact-info .info-list li:nth-child(2) {
+    text-align: center;
+}
+
+.contact-info .info-list strong {
+    color: var(--primary-color);
+    min-width: 20px;
+    display: inline-block;
+}
+
+.contact-info p {
+    max-width: 800px;
+    margin: 1rem auto;
+    text-align: center;
+    color: var(--font-color2);
+}
+
+@media (min-width: 769px) {
+    .contact-info .info-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem 2rem;
+    }
+
+    .contact-info {
+        padding: 1rem 0;
+    }
 }
 
 .contact-form form {
