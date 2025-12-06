@@ -6,20 +6,18 @@ document.addEventListener("DOMContentLoaded", () => {
     function setActiveNavLink() {
         if (!nav) return;
         const links = Array.from(nav.querySelectorAll('a'));
-        // Determine current page file name (ignore query/hash), fallback to index.html
         let currentPath = window.location.pathname || '';
-        // In some local file setups pathname may be a full path; keep last segment
         let currentFile = currentPath.split('/').pop() || '';
         if (!currentFile || currentFile === '') currentFile = 'index.html';
         currentFile = currentFile.toLowerCase();
 
         links.forEach(a => {
-            // Use the link's href resolved against the document location to normalize
+            
             let linkUrl;
             try {
                 linkUrl = new URL(a.getAttribute('href'), window.location.href);
             } catch (e) {
-                // fallback: use raw href
+            
                 linkUrl = { pathname: a.getAttribute('href') };
             }
             const linkFile = (linkUrl.pathname || '').split('/').pop() || 'index.html';
@@ -35,19 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // run once on load and when history changes
+    
     try {
         setActiveNavLink();
         window.addEventListener('popstate', setActiveNavLink);
     } catch (err) {
-        // Defensive: if something goes wrong, log but don't break the page
         console.warn('setActiveNavLink error', err);
     }
 
-    // Only attach menu listeners if the button and nav exist
     if (menuButton) {
         menuButton.addEventListener("click", () => {
-            // nav may be null on pages without a header nav
+           
             if (!nav) return;
             const isOpen = nav.classList.toggle("open");
             menuButton.classList.toggle("open", isOpen);
@@ -57,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.debug('Menu button not found; skipping mobile menu listener.');
     }
 
-    // Close mobile nav when resizing to desktop widths
+    
     window.addEventListener('resize', () => {
         if (window.innerWidth >= 768) {
             if (nav && nav.classList) nav.classList.remove('open');
@@ -71,19 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // Lazy-load images: set native loading attribute for supported browsers
     const imgs = document.querySelectorAll('img');
     imgs.forEach(img => {
-        // don't override an explicit decision in the markup
+        
         if (!img.hasAttribute('loading')) {
             img.setAttribute('loading', 'lazy');
         }
     });
 
-    // Optional: for browsers without native lazy support, use IntersectionObserver to swap data-src
+    
     if ('IntersectionObserver' in window) {
         const io = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const img = entry.target;
-                    // if data-src present, swap it
+                    
                     const dataSrc = img.getAttribute('data-src');
                     if (dataSrc) {
                         img.src = dataSrc;
@@ -97,17 +93,15 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll('img[data-src]').forEach(img => io.observe(img));
     }
 
-    // Compute header height and set CSS variable so layouts account for sticky header
     function updateHeaderOffset() {
         const header = document.querySelector('header');
         if (!header) return;
         const height = Math.ceil(header.getBoundingClientRect().height);
-        // add a small buffer so content isn't flush against the header
+        
         const buffer = 12;
         document.documentElement.style.setProperty('--header-offset', `${height + buffer}px`);
     }
 
-    // initialize and update on resize (throttled)
     updateHeaderOffset();
     let resizeTimer = null;
     window.addEventListener('resize', () => {

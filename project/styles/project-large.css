@@ -5,39 +5,39 @@
     --h1-large: 5rem;
 }
 
-/* Make headings bigger and more prominent on large screens */
+/* Make headings bigger */
 h1 {
     font-size: var(--h1-large);
 }
 
-/* Slightly smaller hero on large view to match requested adjustment */
+/* Slightly smaller hero on large view  */
 .home-hero,
 .about-hero {
     min-height: 110px;
 }
 
-/* Increase H2 size to match home page prominence */
+/* Increase H2 size to match home page  */
 h2 {
     font-size: 2rem;
 }
 
-/* Ensure home hero H1 stays vertically centered on small but on large we can nudge it upward slightly */
+/* hero H1 stays vertically centered on small */
 .home-hero .hero-content {
     top: 40%;
 }
 
-/* Make hero H1 on large screens match the large page H1 (contact) */
+/* Make hero H1 on large screens */
 .home-hero .hero-content h1,
 .about-hero .hero-content h1 {
     font-size: var(--h1-large);
 }
 
-/* Contact page: reduce mission paragraph prominence on large if needed */
+/* Contact page: reduce paragraph size on large view */
 .contact-page .mission p {
     font-size: 1rem;
 }
 
-/* Keep info-cards and contact form content centered and limited */
+/* Keep info-cards and contact form content centered */
 .info-cards.about-container,
 .cards.about-container {
     max-width: 800px;
@@ -51,8 +51,7 @@ h2 {
     font-size: 1.05rem;
 }
 
-/* Make article hero headings use the large h1 size */
+/* Article hero headings use large h1 size */
 .article-header h1 {
     font-size: calc(var(--h1-large, 5rem) * 0.6);
-    /* scaled for article header */
 }
